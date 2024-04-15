@@ -66,7 +66,9 @@ export default defineConfig({
   esbuild: {
     jsxFactory: 'create',
     jsxInject: 'import { create } from "../settings/create.js"',
-  }
+    },
+  
+  base: '/vite'
 });
 
 
