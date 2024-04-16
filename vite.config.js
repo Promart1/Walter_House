@@ -30,7 +30,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
-        login: path.resolve(__dirname, 'pages/login/index.html'),
+       
       }
     }
   },
