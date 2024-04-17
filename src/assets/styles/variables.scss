@@ -1,0 +1,25 @@
+$main-color: rgba(255, 255, 255, 1);
+$secondary-color: #FFAC30;
+$dark-color: #000000;
+
+
+$mobile: 376px;
+$s-mobile: 425px;
+$m-mobile: 560px;
+$l-mobile: 630px;
+$s-tablet: 695px;
+$m-tablet: 730px;
+$l-tablet: 767px;
+$tablet: 768px;
+$xl-tablet: 830px;
+$desktop: 992px;
+$m-desktop: 1090px;
+$l-desktop: 1250px;
+$LapTop: 1440px;
+$xl-LapTop: 1718px;
+
+@mixin respond-to($breakpoint) {
+    @media only screen and (max-width: $breakpoint) {
+        @content;
+    }
+}

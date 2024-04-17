@@ -1,0 +1,270 @@
+@import "@/styles/general.scss";
+@import "@/styles/reset.scss";
+@import "@/styles/variables.scss";
+
+/////////////HEADER//////////////////////////
+
+.header {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        margin-top: 35px;
+    }
+
+    &__logo {
+        width: 68px;
+        height: 54px;
+        margin-right: 45px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+        position: relative;
+    }
+
+    &__list::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 69px;
+        background: $main-color;
+        opacity: 0.4;
+    }
+
+    &__item {
+        display: flex;
+    }
+
+    &__burger {
+        width: 30px;
+        height: 16px;
+        margin-right: 127px;
+    }
+
+    &__number {
+        font-size: 16px;
+        letter-spacing: 2px;
+        transition: color 0.3s ease;
+    }
+
+    &__number:hover {
+        color: $secondary-color;
+    }
+
+    &__request {
+        color: $secondary-color;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-right: 57px;
+        transition: color 0.3s ease;
+        cursor: pointer;
+    }
+
+    &__request:hover {
+        color: $main-color;
+    }
+
+    &__phone {
+        position: relative;
+        margin-right: 60px;
+        animation: phoneAnimation 0.2s infinite;
+
+        &::before {
+            content: "";
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ffffff;
+            opacity: 0.2;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(40%, -40%);
+            animation: circleAnimation 1.5s alternate;
+        }
+
+        &::after {
+            content: "";
+            width: 60px;
+            height: 60px;
+            border: 1px solid #ffffff;
+            opacity: 0.4;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(38%, -38%);
+            animation: circleAnimation 1.5s alternate;
+        }
+    }
+
+    &__phone-wrapper {
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background: $main-color;
+            opacity: 0.2;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(33%, -33%);
+        }
+    }
+
+    @include respond-to($xl-LapTop) {
+        &__list::after {
+            display: none;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            top: 110px;
+            background: $main-color;
+            opacity: 0.4;
+        }
+    }
+
+    @include respond-to($desktop) {
+        &__number {
+            display: none;
+        }
+
+        &__wrapper {
+            margin-top: 22px;
+        }
+
+        &__logo {
+            margin-right: 42px;
+        }
+
+        &__phone {
+            margin-right: 40px;
+        }
+
+
+    }
+
+    @include respond-to($l-mobile) {
+        &__request {
+            display: none;
+        }
+
+        &__wrapper {
+            margin-top: 13px;
+        }
+
+        &__burger {
+            margin-right: 0;
+        }
+
+        &__logo {
+            margin-right: 19px;
+        }
+
+        &__phone {
+            margin-right: 30px;
+
+            &::before {
+
+                width: 60px;
+                height: 60px;
+                transform: translate(37%, -37%);
+            }
+
+            &::after {
+
+                width: 45px;
+                height: 45px;
+                transform: translate(34%, -34%);
+            }
+        }
+
+        &__phone-wrapper {
+
+
+            &::after {
+
+                width: 30px;
+                height: 30px;
+                transform: translate(27%, -27%);
+
+            }
+        }
+
+        &::after {
+
+            top: 79px;
+
+        }
+    }
+}
+
+
+////////////////////LEFT PANEL////////////////////////
+
+.left-panel {
+
+    &__inner {
+        margin-top: 407px;
+        margin-left: 85px;
+    }
+
+    &__text {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        white-space: nowrap;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 8.5px;
+        opacity: 0.5;
+        position: relative;
+    }
+
+    &__text::before {
+        content: "";
+        position: absolute;
+        width: 154px;
+        height: 1px;
+        background: $main-color;
+        top: 6px;
+        left: -230px;
+    }
+
+    &__list {
+        margin-top: 294px;
+    }
+
+    &__item {
+        margin-bottom: 41px;
+
+    }
+
+    &__social:hover {
+        filter: brightness(0) saturate(100%) invert(71%) sepia(79%) saturate(623%) hue-rotate(333deg) brightness(101%) contrast(102%);
+    }
+
+    @include respond-to($xl-LapTop) {
+
+        &__inner {
+
+            margin-left: 35px;
+        }
+    }
+
+    @include respond-to($tablet) {
+        display: none;
+    }
+}

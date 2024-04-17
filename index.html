@@ -1,13 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./src/assets/img/icons/logo.svg"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>WALTER-HOUSE</title>
   </head>
   <body>
-   <h1 class="heading">Hello VITE</h1>
+    <header class="header">
+      <div class="container-header">
+        <div class="header__wrapper">
+          <a href="./" class="header__logo-link">
+            <img
+              src="./src/assets/img/icons/logo.svg"
+              alt="logo"
+              class="header__logo"
+            />
+          </a>
+
+          <ul class="header__list">
+            <li class="header__item">
+              <img
+                src="./src/assets/img/icons/menu-btn.svg"
+                alt="burger"
+                class="header__burger"
+              />
+              <a href="tel:380971234567" class="header__number header-font"
+                >+38 (097) 123 45 67</a
+              >
+            </li>
+
+            <li class="header__item">
+              <p class="header__request">request for a call</p>
+              <div class="header__phone">
+                <div class="header__phone-wrapper">
+                  <img src="./src/assets/img/icons/phone.svg" alt="phone" />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ////////////////////LEFT PANEL//////////////////////// -->
+      <section class="left-panel">
+        <div class="left-panel__inner">
+          <p class="left-panel__text header-font">apartment renovation</p>
+          <ul class="left-panel__list">
+            <li class="left-panel__item">
+              <a href="">
+                <img
+                  src="./src/assets/img/icons/facebook.svg"
+                  class="left-panel__social"
+                  alt="facebook"
+                />
+              </a>
+            </li>
+
+            <li class="left-panel__item">
+              <a href="">
+                <img
+                  src="./src/assets/img/icons/instagram.svg"
+                  class="left-panel__social"
+                  alt="instagram"
+                />
+              </a>
+            </li>
+
+            <li class="left-panel__item">
+              <a href="">
+                <img
+                  src="./src/assets/img/icons/telegram.svg"
+                  class="left-panel__social"
+                  alt="telegram"
+                />
+              </a>
+            </li>
+
+            <li class="left-panel__item">
+              <a href="">
+                <img
+                  src="./src/assets/img/icons/youtube.svg"
+                  class="left-panel__social"
+                  alt="youtube"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
 
     <script type="module" src="/main.js"></script>
   </body>
