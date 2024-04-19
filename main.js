@@ -6,7 +6,7 @@ import './style.scss'
 
 // document.querySelector('#app').appendChild(template);
 
-
+//////////header menu
 
 document.addEventListener("DOMContentLoaded", function() {
     var modal = document.getElementById("headerModal");
@@ -43,3 +43,60 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.remove("modal-open"); // Enable scrolling
     }
 });
+
+
+///////validation form
+
+
+
+const validateInputs = () => {
+    const inputs = document.querySelectorAll('.first-screen__input');
+    let hasError = false;
+
+    inputs.forEach(function(input) {
+        const value = input.value.trim();
+        const validationTextDanger = input.nextElementSibling;
+
+        if (value === '') {
+            input.classList.add('first-screen__input-error');
+            if (validationTextDanger) {
+                validationTextDanger.style.display = 'block';
+            }
+            hasError = true;
+        } else {
+            input.classList.remove('first-screen__input-error');
+            if (validationTextDanger) {
+                validationTextDanger.style.display = 'none';
+            }
+        }
+    });
+
+    return hasError;
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    const submitBtn = document.querySelector('.first-screen__form-btn');
+
+    if (submitBtn && form) {
+        submitBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            const hasInputError = validateInputs();
+
+            if (!hasInputError) {
+                form.submit(); // Відправляє форму
+            }
+        });
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Зупиняє дію за замовчуванням (відправку форми)
+            location.reload(); // Оновлює сторінку після відправки форми (опціонально)
+        });
+    }
+});
+
+
+
+
+
+

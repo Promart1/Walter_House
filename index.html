@@ -250,7 +250,7 @@
         </div>
 
         <div class="first-screen__contact-form">
-          <form>
+          <form class="contact-form">
             <div class="first-screen__input-wrapper">
               <input
                 type="text"
@@ -260,18 +260,9 @@
                 placeholder="Your name"
               />
 
-              <!-- <img
-                src="@img/icons/Mark-form.svg"
-                alt="mark"
-                class="first-screen__input-mark"
-              />
-             
-              <img
-                src="@img/icons/danger.svg"
-                alt="mark"
-                class="first-screen__input-denger"
-              />
-              -->
+              <div class="validation-text-denger">
+                Please provide a valid input.
+              </div>
             </div>
 
             <div class="first-screen__input-wrapper">
@@ -282,20 +273,12 @@
                 class="first-screen__input"
                 placeholder="Your phone number"
               />
-              <!-- <img
-                src="@img/icons/Mark-form.svg"
-                alt="mark"
-                class="first-screen__input-mark"
-              />
-        
-              <img
-                src="@img/icons/danger.svg"
-                alt="mark"
-                class="first-screen__input-denger"
-              /> -->
+               <div class="validation-text-denger">
+                Please provide a valid input.
+              </div>
             </div>
             <div class="first-screen-form__btn-wrapper">
-              <button class="first-screen__form-btn">
+              <button type="submit" class="first-screen__form-btn">
                 discuss a project
                 <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
               </button>

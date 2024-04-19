@@ -5,7 +5,6 @@
 /////////////HEADER//////////////////////////
 
 .header {
-
   &__wrapper {
     display: flex;
     align-items: center;
@@ -138,6 +137,7 @@
       top: 110px;
       background: $main-color;
       opacity: 0.4;
+      z-index: 2;
     }
   }
 
@@ -626,7 +626,6 @@ body.modal-open {
 ////////////////////LEFT PANEL////////////////////////
 
 .left-panel {
-    
   &__inner {
     top: 495px;
     left: 80px;
@@ -671,46 +670,45 @@ body.modal-open {
 
   @include respond-to($xl-LapTop) {
     &__inner {
-        top: 50%;
+      top: 50%;
       left: 34px;
     }
 
-         &__text {
-             font-size: 0.5vw;
-         }
-    
-         &__text::before {
-             width: 10vw;
-             left: -70%;
-         }
-    
-         &__list {
-             margin-top: 80%;
-         }
-    
-         &__item {
-             margin-bottom: 1.5vw;
-         }
+    &__text {
+      font-size: 0.5vw;
+    }
+
+    &__text::before {
+      width: 10vw;
+      left: -70%;
+    }
+
+    &__list {
+      margin-top: 80%;
+    }
+
+    &__item {
+      margin-bottom: 1.5vw;
+    }
   }
 
-  @include respond-to($tablet) {
+  @include respond-to($xl-tablet) {
     display: none;
   }
 }
 
 .first-screen {
-    
-height: 100vh;
-    &__bg {
-width: 100%;
+  height: 100vh;
+  &__bg {
+    width: 100%;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
-    }
-               
-&__bg-overlay {
+  }
+
+  &__bg-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -718,125 +716,125 @@ width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
-}
+  }
 
-&__inner {
+  &__inner {
     position: relative;
     z-index: 3;
-top: 25%;
+    top: 25%;
     margin-left: 16.5%;
     margin-right: auto;
     display: flex;
     justify-content: space-between;
-    
-}
+  }
 
-&__title  {
+  &__title {
     // font-size: 96px;
     font-size: 5vw;
     line-height: 90px;
-    text-shadow:
-            -1px -1px 0 black,
-            1px -1px 0 black,
-            -1px 1px 0 black,
-            1px 1px 0 black;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+      1px 1px 0 black;
     text-transform: uppercase;
-    
-}
+  }
 
-&__title-s {
+  &__title-s {
     margin-left: 190px;
-}
+  }
 
-&__subtitle {
+  &__subtitle {
     font-weight: 300;
     font-size: 16px;
     letter-spacing: 8px;
-            
+
     text-transform: uppercase;
     margin-left: 5px;
-}
+  }
 
-&__point-wrapper {
+  &__point-wrapper {
     margin-right: 121px;
     margin-top: 25px;
-    
-}
+  }
 
-&__point {
+  &__point {
     width: 7px;
     height: 7px;
     border-radius: 50%;
     background: $main-color;
     opacity: 0.3;
     margin-bottom: 30px;
-   
-}
+  }
 
-&__point-active {
+  &__point-active {
     background: $secondary-color;
     position: relative;
     opacity: 1;
-}
+  }
 
-&__point-active::after {
-content: "";
-position: absolute;
-width: 25px;
-height: 25px;
-border: 1px solid $main-color;
-opacity: 0.3;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-border-radius: 50%;
-}
-
-&__contact-form {
+  &__point-active::after {
+    content: "";
     position: absolute;
-        z-index: 3;
-       bottom: -1px;
-       right: 0;
-width: 60vw;
+    width: 25px;
+    height: 25px;
+    border: 1px solid $main-color;
+    opacity: 0.3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  &__contact-form {
+    position: absolute;
+    z-index: 3;
+    bottom: -1px;
+    right: 0;
+    width: 60vw;
     max-width: 740px;
-       padding: 81px 120px 90px 120px;
-    
-       background: $main-color;
-       height: 20vw;
+    padding: 81px 120px 90px 120px;
 
+    background: $main-color;
+    height: 20vw;
+  }
 
-}
+  &__input-wrapper {
+    position: relative;
+  }
 
-&__input {
+  &__input {
     border: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-        width: 100%;
-        outline: none;
-        margin-bottom: 14px;
-        padding: 25px 10px 22px 0;
-        // margin-bottom: 1.4vw;
-          
-        //     padding: 2.5vw 1vw 2.2vw 0;
-            // font-size: 1.8vw;
-}
+    font-size: 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    outline: none;
+    margin-bottom: 17px;
+    padding: 20px 10px 22px 0;
 
-&__input::placeholder {
+    // margin-bottom: 1.4vw;
+
+    //     padding: 2.5vw 1vw 2.2vw 0;
+    // font-size: 1.8vw;
+  }
+
+  &__input::placeholder {
     font-size: 18px;
     color: #000000;
     opacity: 1;
-}
+  }
 
-&__input::-webkit-input-placeholder,
-&__input::-moz-placeholder, 
-&__input:-ms-input-placeholder {
-    
+  &__input-error {
+    border-bottom: 1px solid red;
+  }
+
+  &__input::-webkit-input-placeholder,
+  &__input::-moz-placeholder,
+  &__input:-ms-input-placeholder {
     color: #000000;
-    
-}
+  }
 
-&__form-btn {
+  &__form-btn {
     font-weight: 600;
     font-size: 20px;
+
     // font-size: 2vw;
     color: $secondary-color;
     letter-spacing: 8px;
@@ -845,34 +843,93 @@ width: 60vw;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 36px;
+    margin-top: 30px;
     // margin-top: 3.6vw;
     transition: transform 0.3s ease;
-}
+  }
 
-&__form-btn:hover {
+  &__form-btn:hover {
     transform: translateX(10px);
-}
+  }
 
- @include respond-to($xl-LapTop) {
+  @include respond-to($xl-LapTop) {
     &__contact-form {
-           padding: 2vw 3vw;
-    width: 45vw;
-    height: 18vw;
+      padding: 2vw 3vw;
+      width: 45vw;
+      height: 18vw;
+    }
+
+    &__input {
+      margin-bottom: 1vw;
+
+      padding: 1vw 1vw 1vw 0;
+      font-size: 1.4vw;
+    }
+
+    &__inner {
+      top: 16%;
+    }
+
+    &__form-btn {
+      font-size: 1.2vw;
+    }
+  }
+
+  @include respond-to($xl-tablet) {
+    &__point-wrapper {
+      display: none;
+    }
+
+    &__bg {
+     
+      height: 576px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+        &__bg-overlay {
+            height: 576px;
+        }
+
+    &__title {
+      font-size: 13vw;
+    }
+
+    &__inner {
+      margin-left: 5%;
+      margin-top: 7.5%;
+
+      display: block;
+    }
+
+    &__title-s {
+      margin-left: 24vw;
+    }
+
+        &__contact-form {
+            width: 100%;
+           position: static;
+           margin-top: 260px;
+            max-width: 100%;
+            padding: 85px 120px 89px 120px;
     
+           
+           height: 400px;
         }
 
                 &__input {
-                    
-                    margin-bottom: 1vw;
+                   
+                    font-size: 18px;
+                   
+                    margin-bottom: 17px;
+                    padding: 20px 10px 22px 0;
         
-                        padding: 1vw 1vw 1vw 0;
-                    font-size: 1.4vw;
+                   
                 }
 
-                                &__inner {
-                                    top: 16%;
-                                }
- }
-
+                                 &__form-btn {
+                                    font-size: 20px;
+                                    align-items: center;
+                                 }
+  }
 }
