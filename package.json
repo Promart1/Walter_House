@@ -20,6 +20,7 @@
     "vite-plugin-inspect": "^0.8.3"
   },
   "dependencies": {
-    "collect.js": "^4.36.1"
+    "collect.js": "^4.36.1",
+    "handlebars": "^4.7.8"
   }
 }

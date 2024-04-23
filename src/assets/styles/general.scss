@@ -1,5 +1,14 @@
 @import "./src/assets/styles/variables.scss";
 
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    // overflow: hidden;
+    /* Вимкнути зовнішню прокрутку сторінки */
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
@@ -7,8 +16,9 @@ body {
     font-style: normal;
     font-variation-settings: "wdth" 100;
     margin: 0;
-    background: black;
+    background: $main-color;
     color: $main-color;
+    // overflow: hidden;
 }
 
 .container-header {
@@ -27,10 +37,47 @@ body {
         }
 }
 
+// .scroll-container {
+//     width: 100%;
+//     height: 100vh;
+//     /* Повна висота екрану */
+//     display: flex;
+//     overflow: auto;
+//     /* Дозволити внутрішню прокрутку */
+// }
+
+// .slider {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     scroll-snap-type: y mandatory;
+//     /* Прив'язка прокрутки до вертикальних секцій */
+//     overflow-y: auto;
+//     /* Дозволити внутрішню вертикальну прокрутку */
+//     box-sizing: border-box;
+//     /* Урахувати падіння та межі у розрахунку ширини та висоти */
+// }
+
+// .section {
+//     height: 100vh;
+//     /* Повна висота екрану для кожної секції */
+//     scroll-snap-align: start;
+//     /* Прив'язка прокрутки до верхньої частини секції */
+//     scroll-snap-stop: always;
+//     /* Зупинка прокрутки на кожній секції */
+//     padding: 20px;
+//     /* Приклад внутрішніх падінь (може бути змінено) */
+//     box-sizing: border-box;
+//     /* Урахувати падіння та межі у розрахунку ширини та висоти */
+// }
+
+
+
 .header-font {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-style: normal;
+    text-transform: uppercase;
 }
 
 .title {
@@ -42,13 +89,22 @@ body {
 .validation-text-denger {
     position: absolute;
     left: 0;
-    top: 64px;
+    bottom: -5px;
     font-size: 12px;
+   
     color: red;
     display: none;
-
+z-index: 5;
     
 }
+
+.content {
+    font-family: "Bruno Ace", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+}
+
+
 
 
 @keyframes phoneAnimation {

@@ -5,12 +5,17 @@
 /////////////HEADER//////////////////////////
 
 .header {
+position: fixed;
+width: 100%;
+
+z-index: 6;
+
   &__wrapper {
     display: flex;
     align-items: center;
     margin-top: 35px;
     position: relative;
-    z-index: 5;
+    z-index: 6;
   }
 
   &__logo {
@@ -125,6 +130,8 @@
   }
 
   @include respond-to($xl-LapTop) {
+
+
     &__list::after {
       display: none;
     }
@@ -134,10 +141,10 @@
       position: absolute;
       width: 100%;
       height: 1px;
-      top: 110px;
+      top: 109px;
       background: $main-color;
       opacity: 0.4;
-      z-index: 2;
+      z-index: 3;
     }
   }
 
@@ -158,6 +165,10 @@
       margin-right: 40px;
     }
   }
+
+     @include respond-to($xl-tablet) {
+      position: static;
+     }
 
   @include respond-to($l-mobile) {
     &__request {
@@ -213,12 +224,13 @@ body.modal-open {
 .header-modal {
   display: none;
   position: fixed;
-  z-index: 4;
+  z-index: 5;
   left: 0;
   top: 0;
   width: 100%;
   //   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
   /* Semi-transparent background */
   overflow: auto;
   height: 100vh;
@@ -432,13 +444,13 @@ body.modal-open {
     }
   }
 
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+  // .close {
+  //   color: #aaa;
+  //   float: right;
+  //   font-size: 28px;
+  //   font-weight: bold;
+  //   cursor: pointer;
+  // }
 
   .close:hover,
   .close:focus {
@@ -630,8 +642,8 @@ body.modal-open {
     top: 495px;
     left: 80px;
     position: relative;
-    z-index: 3;
-    position: absolute;
+    z-index: 5;
+    position: fixed;
   }
 
   &__text {
@@ -676,6 +688,7 @@ body.modal-open {
 
     &__text {
       font-size: 0.5vw;
+      letter-spacing: 8px;
     }
 
     &__text::before {
@@ -699,6 +712,8 @@ body.modal-open {
 
 .first-screen {
   height: 100vh;
+  width: 100%;
+
   &__bg {
     width: 100%;
     height: 100vh;
@@ -721,11 +736,12 @@ body.modal-open {
   &__inner {
     position: relative;
     z-index: 3;
-    top: 25%;
+    top: 33%;
     margin-left: 16.5%;
     margin-right: auto;
-    display: flex;
-    justify-content: space-between;
+    // height: 100vw;
+    // display: flex;
+    // justify-content: space-between;
   }
 
   &__title {
@@ -751,26 +767,75 @@ body.modal-open {
   }
 
   &__point-wrapper {
-    margin-right: 121px;
-    margin-top: 25px;
+    position: absolute;
+    z-index: 3;
+    top: 35%;
+    right: 115px;
   }
 
+  // &__point {
+  //   width: 7px;
+  //   height: 7px;
+  //   border-radius: 50%;
+  //   background: $main-color;
+  //   opacity: 0.3;
+  //   margin-bottom: 30px;
+  // }
+
+  // &__point-active {
+  //   background: $secondary-color;
+  //   position: relative;
+  //   opacity: 1;
+  // }
+
+  // &__point-active::after {
+  //   content: "";
+  //   position: absolute;
+  //   width: 25px;
+  //   height: 25px;
+  //   border: 1px solid $main-color;
+  //   opacity: 0.3;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   border-radius: 50%;
+  // }
+
   &__point {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 7px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__point::after {
     width: 7px;
     height: 7px;
     border-radius: 50%;
     background: $main-color;
     opacity: 0.3;
-    margin-bottom: 30px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__point-active {
-    background: $secondary-color;
+    //  background: $secondary-color;
     position: relative;
     opacity: 1;
   }
 
   &__point-active::after {
+    background: $secondary-color;
+
+    opacity: 1;
+  }
+
+  &__point-active::before {
     content: "";
     position: absolute;
     width: 25px;
@@ -867,29 +932,36 @@ body.modal-open {
     }
 
     &__inner {
-      top: 16%;
+      top: 30%;
     }
 
     &__form-btn {
       font-size: 1.2vw;
     }
+
+    &__point-wrapper {
+      top: 25%;
+      right: 60px;
+    }
   }
 
   @include respond-to($xl-tablet) {
+    height: auto;
+
+
     &__point-wrapper {
       display: none;
     }
 
     &__bg {
-     
       height: 576px;
       object-fit: cover;
       object-position: center;
     }
 
-        &__bg-overlay {
-            height: 576px;
-        }
+    &__bg-overlay {
+      height: 576px;
+    }
 
     &__title {
       font-size: 13vw;
@@ -897,8 +969,8 @@ body.modal-open {
 
     &__inner {
       margin-left: 5%;
-      margin-top: 7.5%;
-
+      margin-top: 21%;
+      padding-bottom: 140px;
       display: block;
     }
 
@@ -906,30 +978,483 @@ body.modal-open {
       margin-left: 24vw;
     }
 
-        &__contact-form {
-            width: 100%;
-           position: static;
-           margin-top: 260px;
-            max-width: 100%;
-            padding: 85px 120px 89px 120px;
+    &__contact-form {
+      width: 100%;
+      position: static;
+      max-width: 100%;
+      padding: 85px 120px 89px 120px;
+
+      height: auto;
+    }
+
+    &__input {
+      font-size: 18px;
+
+      margin-bottom: 17px;
+      padding: 24px 10px 22px 0;
+    }
+
+    &__form-btn {
+      font-size: 20px;
+      align-items: center;
+    }
+  }
+
+  @include respond-to($m-tablet) {
+    &__inner {
+      margin-left: 2%;
+      margin-top: 15%;
+    }
+
+    &__title {
+      font-size: 15vw;
+      // line-height: 50px;
+    }
+
+    &__title-s {
+      margin-left: 27vw;
+    }
+
+    &__subtitle {
+      font-size: 8px;
+      letter-spacing: 6px;
+    }
+
+    &__bg {
+      height: 480px;
+    }
+
+    &__bg-overlay {
+      height: 480px;
+    }
+    &__contact-form {
+      padding: 40px 40px 50px 40px;
+    }
+
+    &__input {
+      font-size: 14px;
+
+      margin-bottom: 17px;
+      padding: 24px 10px 22px 0;
+    }
+
+    &__input::placeholder {
+      font-size: 14px;
+    }
+
+    &__form-btn {
+      font-size: 13px;
+      letter-spacing: 6px;
+    }
+  }
+
+  @include respond-to($s-tablet) {
+    &__inner {
+      padding-bottom: 120px;
+    }
+  }
+
+  @include respond-to($s-mobile) {
+    &__title {
+      line-height: 50px;
+    }
+
+    &__inner {
+      margin-left: 2%;
+      margin-top: 37%;
+      padding-bottom: 180px;
+    }
+
+    &__form-btn {
+      margin-top: 18px;
+      letter-spacing: 3px;
+    }
+
+    &__input {
+      margin-bottom: 7px;
+      padding: 14px 10px 12px 0;
+    }
+  }
+}
+
+.second-screen {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
+  &__inner {
+    top: 21%;
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+
+  &__subtitle {
+    text-align: center;
+    max-width: 563px;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 6px;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    margin-top: 5.8vw;
+    justify-content: center;
+
+    li {
+      width: 520px;
+      text-align: center;
+      position: relative;
+    }
+  }
+
+  &__item:not(:last-child):after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    right: 0;
+    height: 250px;
+    width: 2px;
+    transition: height 0.8s;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 52.28%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  &__number {
+    font-size: 64px;
+    line-height: 70px;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    font-size: 30px;
+    line-height: 40px;
+    text-transform: uppercase;
+    max-width: 230px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__btn {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 7px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    margin-top: 21.5vw;
+    margin-left: 20vw;
+    transition: transform 0.3s ease;
+    max-width: 430px;
+    color: $main-color;
+
+    img {
+      margin-left: 8px;
+    }
+  }
+
+  &__btn:hover {
+    transform: translateX(10px);
+  }
+
+  @include respond-to($xl-LapTop) {
+    &__btn {
+      margin-top: 13vw;
+      margin-left: 15vw;
+    }
+  }
+
+  @include respond-to($LapTop) {
+    &__content-wrapper {
+      li {
+        width: 320px;
+      }
+    }
+  }
+
+  @include respond-to($l-desktop) {
+    &__content-wrapper {
+      li {
+        width: 220px;
+      }
+    }
+
+    &__subtitle {
+      font-size: 18px;
+      line-height: 19px;
+    }
+
+    &__number {
+      font-size: 44px;
+      line-height: 50px;
+      margin-bottom: 14px;
+    }
+
+    &__text {
+      font-size: 20px;
+      line-height: 30px;
+      max-width: 180px;
+    }
+
+    &__btn {
+      margin-left: 10vw;
+      font-size: 13px;
+max-width: 380px;
+      letter-spacing: 5px;
+    }
+
+    &__item:not(:last-child):after {
+      height: 190px;
+    }
+  }
+
+  @include respond-to($xl-tablet) {
+    height: auto;
+
+    &__contact-form {
+      display: none;
+    }
+
+    &__inner {
+      top: 0;
+      margin-top: 0;
+      padding-top: 21%;
+    }
+
+    &__btn {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  @include respond-to($l-tablet) {
+    &__inner {
+      padding-top: 15%;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+      line-height: 15px;
+    }
+
+    &__number {
+      font-size: 34px;
+      line-height: 40px;
+      margin-bottom: 12px;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 25x;
+      max-width: 180px;
+    }
+
+    &__content-wrapper {
+      margin-top: 15vw;
+    }
+  }
+
+  @include respond-to($s-mobile) {
+    &__content-wrapper {
+      display: block;
+    }
+
+    &__item {
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 35px;
+    }
+
+    &__inner {
+      padding-top: 5%;
+    }
+
+    &__subtitle {
+      font-size: 10px;
+    }
+
+    &__number {
+      font-size: 25px;
+      line-height: 10px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 10x;
+    }
+
+    &__content-wrapper {
+      margin-top: 17vw;
+    }
+
+    &__item:not(:last-child):after {
+      top: 120%;
+      right: 0;
+      width: 250px;
+      height: 2px;
+
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 52.28%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+
+    &__btn {
+      margin-left: 5vw;
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.about-popup {
+
+  &__content {
+    padding-top: 15px;
+    margin: 8% auto;
+    text-transform: uppercase;
+    height: 80vh;
+    position: relative;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 70px;
+    justify-content: space-between;
+  }
+
+        &__content::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+background: $main-color;
+opacity: 0.6;
+bottom: 80px;
+position: absolute;
+    }
+
+  &__logo-wrapper {
+    width: 409px;
+    height: 700px;
+    background: gray;
+    opacity: 0.8;
+    border: 1px solid #000000;
+min-width: 260px;
+    img {
+      width: 100%;
+    }
+   
+  }
+
+  &__logo {
+    margin-top: 150px;
+    margin-bottom: 69px;
+  }
+
+  &__slogan {
+    padding-left: 10px;
+  }
+
+  &__context-wrapper {
+    max-width: 940px;
+    margin-top: 29px;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 50px;
+    margin-bottom: 42px;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+    &__item::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: -58px;
+      width: 8px;
+        height: 8px;
+        background: $main-color;
+        border-radius: 50%;
+    }
+
+  
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
     
-           
-           height: 400px;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+
+    span {
+      color: $secondary-color;
+    }
+  }
+
+  &__form-btn {
+    justify-content: center;
+
+    img {
+      margin-left: 10px;
+    }
+  }
+
+    @include respond-to($xl-LapTop) {
+
+      &__content::after {
+position: static;
+      }
+    }
+
+        @include respond-to($LapTop) {
+
+          &__logo-wrapper {
+            display: none;
+          }
         }
 
-                &__input {
-                   
-                    font-size: 18px;
-                   
-                    margin-bottom: 17px;
-                    padding: 20px 10px 22px 0;
-        
-                   
-                }
+                @include respond-to($m-tablet) {
+                 
+                  &__content {
+                    padding: 15px;
+                  }
 
-                                 &__form-btn {
-                                    font-size: 20px;
-                                    align-items: center;
-                                 }
-  }
+                  &__item {
+                    padding-bottom: 35px;
+                  }
+
+                                     &__subtitle {
+                                       font-size: 18px;
+                                       line-height: 22px;
+                                      
+                  
+                                     }
+                  
+                                     &__text {
+                                      
+                                       font-size: 14px;
+                                       line-height: 20px;
+                                     }
+                } 
 }
