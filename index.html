@@ -7,9 +7,12 @@
       type="image/svg+xml"
       href="./src/assets/img/icons/logo.svg"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WALTER-HOUSE</title>
   </head>
@@ -27,7 +30,11 @@
 
           <ul class="header__list">
             <li class="header__item">
-              <button id="openHeaderModalBtn" data-modal-target="headerModal" class="openModalBtn">
+              <button
+                id="openHeaderModalBtn"
+                data-modal-target="headerModal"
+                class="openModalBtn"
+              >
                 <img
                   src="./src/assets/img/icons/menu-btn.svg"
                   alt="burger"
@@ -51,7 +58,7 @@
         </div>
       </div>
 
-       <!-- ////////////////////HEADER MODAL WINDOW////////////////////////  -->
+      <!-- ////////////////////HEADER MODAL WINDOW////////////////////////  -->
 
       <div id="headerModal" class="header-modal main-popUp">
         <div class="header-modal__content">
@@ -220,235 +227,379 @@
         </div>
       </div>
 
-       <div class="scroll-container">
+      <div class="scroll-container">
         <div class="slider">
-      <!-- ////////////////////FIRST SCREEN//////////////////////// -->
-      
-      
-      <section id="screenShot1" class="first-screen section">
-        <picture>
-          <source
-            media="(min-width: 920px)"
-            srcset="./src/assets/img/first-screen-bg.jpg"
-          />
-          <source
-            media="(min-width: 425px)"
-            srcset="./src/assets/img/first-screen-bg-768.jpg"
-          />
-          <source
-            media="(min-width: 200px)"
-            srcset="./src/assets/img/first-screen-bg-320.jpg"
-          />
-          <img
-            src="./src/assets/img/first-screen-bg.jpg"
-            class="first-screen__bg"
-            alt="bg"
-          />
-        </picture>
-        <div class="first-screen__bg-overlay"></div>
+          <!-- ////////////////////FIRST SCREEN//////////////////////// -->
 
-        <div class="first-screen__inner">
-          <div>
-            <h1 class="first-screen__title title">walter</h1>
-            <p class="first-screen__subtitle header-font">your personal</p>
-            <h2 class="first-screen__title first-screen__title-s title">
-              House
-            </h2>
-          </div>
-        </div>
-
-        <div class="first-screen__point-wrapper">
-            <div class="first-screen__point first-screen__point-active"></div>
-            <div class="first-screen__point"></div>
-            <div class="first-screen__point"></div>
-            <div class="first-screen__point"></div>
-            <div class="first-screen__point"></div>
-            <div class="first-screen__point"></div>
-          </div>
-
-        <div class="first-screen__contact-form">
-          <form class="contact-form">
-            <div class="first-screen__input-wrapper">
-              <input
-                type="text"
-                name="name"
-                id="app-name"
-                class="first-screen__input"
-                placeholder="Your name"
+          <section id="screenShot1" class="first-screen section">
+            <picture>
+              <source
+                media="(min-width: 920px)"
+                srcset="./src/assets/img/first-screen-bg.jpg"
               />
+              <source
+                media="(min-width: 425px)"
+                srcset="./src/assets/img/first-screen-bg-768.jpg"
+              />
+              <source
+                media="(min-width: 200px)"
+                srcset="./src/assets/img/first-screen-bg-320.jpg"
+              />
+              <img
+                src="./src/assets/img/first-screen-bg.jpg"
+                class="first-screen__bg"
+                alt="bg"
+              />
+            </picture>
+            <div class="first-screen__bg-overlay"></div>
 
-              <div class="validation-text-denger">
-                Please provide a valid input.
+            <div class="first-screen__inner">
+              <div>
+                <h1 class="first-screen__title title">walter</h1>
+                <p class="first-screen__subtitle header-font">your personal</p>
+                <h2 class="first-screen__title first-screen__title-s title">
+                  House
+                </h2>
               </div>
             </div>
 
-            <div class="first-screen__input-wrapper">
-              <input
-                type="tel"
-                name="phone"
-                id="app-phone"
-                class="first-screen__input"
-                placeholder="Your phone number"
-              />
-              <div class="validation-text-denger">
-                Please provide a valid input.
-              </div>
-            </div>
-            <div class="first-screen-form__btn-wrapper">
-              <button type="submit" class="first-screen__form-btn">
-                discuss a project
-                <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <!-- ////////////////////SECOND SCREEN//////////////////////// -->
-
-      <section id="screenShot2" class="second-screen section">
-        <picture>
-          <source
-            media="(min-width: 920px)"
-            srcset="./src/assets/img/second-screen-bg.jpg"
-          />
-          <source
-            media="(min-width: 425px)"
-            srcset="./src/assets/img/second-screen-bg-tab.jpg"
-          />
-          <source
-            media="(min-width: 200px)"
-            srcset="./src/assets/img/second-screen-bg-mob.jpg"
-          />
-          <img
-            src="./src/assets/img/second-screen-bg.jpg"
-            class="first-screen__bg"
-            alt="bg"
-          />
-        </picture>
-        <div class="first-screen__bg-overlay"></div>
-
-        <div class="first-screen__inner second-screen__inner">
-          <h3 class="second-screen__subtitle header-font">
-            elite renovation of your apartment
-          </h3>
-          <ul class="second-screen__content-wrapper">
-            <li class="second-screen__item">
-              <p class="second-screen__number content">18</p>
-              <p class="second-screen__text">years on the market</p>
-            </li>
-
-            <li class="second-screen__item">
-              <p class="second-screen__number content">237</p>
-              <p class="second-screen__text">completed projects</p>
-            </li>
-
-            <li class="second-screen__item">
-              <p class="second-screen__number content">50</p>
-              <p class="second-screen__text">employees</p>
-            </li>
-          </ul>
-
-          <button class="second-screen__btn openModalBtn" data-modal-target="aboutUsModal">
-            more info about us
-            <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
-          </button>
-
-          
-        </div>
-
-        <div class="first-screen__point-wrapper">
-            <div class="first-screen__point first-screen__point-active"></div>
-            <div class="first-screen__point"></div>
-            <div class="first-screen__point"></div>
-            <div class="first-screen__point"></div>
-            <div class="first-screen__point"></div>
-            <div class="first-screen__point"></div>
-          </div>
-
-        <div class="first-screen__contact-form second-screen__contact-form">
-          <form class="contact-form">
-            <div class="first-screen__input-wrapper">
-              <input
-                type="text"
-                name="name"
-                id="app-name"
-                class="first-screen__input"
-                placeholder="Your name"
-              />
-
-              <div class="validation-text-denger">
-                Please provide a valid input.
-              </div>
+            <div class="first-screen__point-wrapper">
+              <div class="first-screen__point first-screen__point-active"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
             </div>
 
-            <div class="first-screen__input-wrapper">
-              <input
-                type="tel"
-                name="phone"
-                id="app-phone"
-                class="first-screen__input"
-                placeholder="Your phone number"
-              />
-              <div class="validation-text-denger">
-                Please provide a valid input.
-              </div>
-            </div>
-            <div class="first-screen-form__btn-wrapper">
-              <button type="submit" class="first-screen__form-btn">
-                discuss a project
-                <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
-              </button>
-            </div>
-          </form>
-        </div>
+            <div class="first-screen__contact-form">
+              <form class="contact-form">
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    id="app-name"
+                    class="first-screen__input"
+                    placeholder="Your name"
+                  />
 
-         <!-- ////////////////////ABOUT US POPUP////////////////////////  -->
-
-      <div id="aboutUsModal" class="header-modal main-popUp">
-        <div class="header-modal__content about-popup__content">
-          <div class="about-popup__wrapper">
-            <div class="about-popup__logo-wrapper">
-              <img src="./src/assets/img/icons/logo.svg" alt="logo" class="about-popup__logo">
-              <img src="./src/assets/img/icons/slogan.svg" alt="slogan" class="about-popup__slogan">
-            </div>
-
-            <div class="about-popup__context-wrapper">
-              <h2 class="about-popup__title">ABOUT US</h2>
-              <ul class="about-popup__list">
-                <li class="about-popup__item">
-                 <div class="about-popup__point"></div>
-                  <div class="about-popup__item-content">
-                    <h3 class="about-popup__subtitle">What is Lorem Ipsum?</h3>
-                    <p class="about-popup__text"><span>Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
                   </div>
+                </div>
+
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="app-phone"
+                    class="first-screen__input"
+                    placeholder="Your phone number"
+                  />
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+                <div class="first-screen-form__btn-wrapper">
+                  <button type="submit" class="first-screen__form-btn">
+                    discuss a project
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <!-- ////////////////////SECOND SCREEN//////////////////////// -->
+
+          <section id="screenShot2" class="second-screen section">
+            <picture>
+              <source
+                media="(min-width: 920px)"
+                srcset="./src/assets/img/second-screen-bg.jpg"
+              />
+              <source
+                media="(min-width: 425px)"
+                srcset="./src/assets/img/second-screen-bg-tab.jpg"
+              />
+              <source
+                media="(min-width: 200px)"
+                srcset="./src/assets/img/second-screen-bg-mob.jpg"
+              />
+              <img
+                src="./src/assets/img/second-screen-bg.jpg"
+                class="first-screen__bg"
+                alt="bg"
+              />
+            </picture>
+            <div class="first-screen__bg-overlay"></div>
+
+            <div class="first-screen__inner second-screen__inner">
+              <h3 class="second-screen__subtitle header-font">
+                elite renovation of your apartment
+              </h3>
+              <ul class="second-screen__content-wrapper">
+                <li class="second-screen__item">
+                  <p class="second-screen__number content">18</p>
+                  <p class="second-screen__text">years on the market</p>
                 </li>
 
-                <li class="about-popup__item">
-                   <div class="about-popup__point"></div>
-                  <div class="about-popup__item-content">
-                    <h3 class="about-popup__subtitle">Why do we use it?</h3>
-                    <p class="about-popup__text"><span>Lorem Ipsum</span> is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                  </div>
+                <li class="second-screen__item">
+                  <p class="second-screen__number content">237</p>
+                  <p class="second-screen__text">completed projects</p>
+                </li>
+
+                <li class="second-screen__item">
+                  <p class="second-screen__number content">50</p>
+                  <p class="second-screen__text">employees</p>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div class="first-screen-form__btn-wrapper">
-              <button type="submit" class="close first-screen__form-btn about-popup__form-btn">
-                back to home page
+
+              <button
+                class="second-screen__btn openModalBtn"
+                data-modal-target="aboutUsModal"
+              >
+                more info about us
                 <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
               </button>
             </div>
+
+            <div class="first-screen__point-wrapper">
+              <div class="first-screen__point first-screen__point-active"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+            </div>
+
+            <div class="first-screen__contact-form second-screen__contact-form">
+              <form class="contact-form">
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    id="app-name"
+                    class="first-screen__input"
+                    placeholder="Your name"
+                  />
+
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="app-phone"
+                    class="first-screen__input"
+                    placeholder="Your phone number"
+                  />
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+                <div class="first-screen-form__btn-wrapper">
+                  <button type="submit" class="first-screen__form-btn">
+                    discuss a project
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- ////////////////////ABOUT US POPUP////////////////////////  -->
+
+            <div id="aboutUsModal" class="header-modal main-popUp">
+              <div class="header-modal__content about-popup__content">
+                <div class="about-popup__wrapper">
+                  <div class="about-popup__logo-wrapper">
+                    <img
+                      src="./src/assets/img/icons/logo.svg"
+                      alt="logo"
+                      class="about-popup__logo"
+                    />
+                    <img
+                      src="./src/assets/img/icons/slogan.svg"
+                      alt="slogan"
+                      class="about-popup__slogan"
+                    />
+                  </div>
+
+                  <div class="about-popup__context-wrapper">
+                    <h2 class="about-popup__title">ABOUT US</h2>
+                    <ul class="about-popup__list">
+                      <li class="about-popup__item">
+                        <div class="about-popup__point"></div>
+                        <div class="about-popup__item-content">
+                          <h3 class="about-popup__subtitle">
+                            What is Lorem Ipsum?
+                          </h3>
+                          <p class="about-popup__text">
+                            <span>Lorem Ipsum</span> is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since
+                            the 1500s, when an unknown printer took a galley of
+                            type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, but also
+                            the leap into electronic typesetting, remaining
+                            essentially unchanged. It was popularised in the
+                            1960s with the release of Letraset sheets containing
+                            Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                          </p>
+                        </div>
+                      </li>
+
+                      <li class="about-popup__item">
+                        <div class="about-popup__point"></div>
+                        <div class="about-popup__item-content">
+                          <h3 class="about-popup__subtitle">
+                            Why do we use it?
+                          </h3>
+                          <p class="about-popup__text">
+                            <span>Lorem Ipsum</span> is a long established fact
+                            that a reader will be distracted by the readable
+                            content of a page when looking at its layout. The
+                            point of using Lorem Ipsum is that it has a
+                            more-or-less normal distribution of letters, as
+                            opposed to using 'Content here, content here',
+                            making it look like readable English. Many desktop
+                            publishing packages and web page editors now use
+                            Lorem Ipsum as their default model text, and a
+                            search for 'lorem ipsum' will uncover many web sites
+                            still in their infancy. Various versions have
+                            evolved over the years, sometimes by accident,
+                            sometimes on purpose (injected humour and the like).
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="first-screen-form__btn-wrapper">
+                  <button
+                    type="submit"
+                    class="close first-screen__form-btn about-popup__form-btn"
+                  >
+                    back to home page
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ////////////////////THIRD SCREEN//////////////////////// -->
+
+          <section id="screenShot3" class="third-screen section">
+            <div class="first-screen__inner third-screen__inner">
+              <div class="third-screen__photo-gallery">
+                <div class="third-screen__photo">
+                  <img
+                    src="./src/assets/img/third-screen-first.jpg"
+                    alt="Photo 1"
+                    class="third-screen__full-image third-screen__first-full-image"
+                  />
+                  <div class="third-screen__content-wrapper">
+                    <h2 class="third-screen__title content">Elite</h2>
+
+                    <div class="third-screen__content-block">
+                      <p class="third-screen__content-text">THE VIP STYLE INCLUDES AN EXTENDED SET OF WORKS. SUITABLE FOR THOSE WHO WANTS TO GET THE PERFECT RESULT.</p>
+                      <a href="#" class="third-screen__content-f-btn">
+                        gallery
+                        <img
+                          src="./src/assets/img/icons/arrow.svg"
+                          alt="arrow"
+                        />
+                      </a>
+                      <a href="#" class="third-screen__content-s-btn">
+                        list of services
+                        <img
+                          src="./src/assets/img/icons/w-arrow.svg"
+                          alt="arrow"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="third-screen__photo">
+                  <img
+                    src="./src/assets/img/third-screen-second.jpg"
+                    alt="Photo 2"
+                    class="third-screen__full-image"
+                  />
+                  <div class="third-screen__content-wrapper">
+                    <h2 class="third-screen__title content">VIP</h2>
+                 
+                    <div class="third-screen__content-block">
+                      <p class="third-screen__content-text">THE VIP STYLE INCLUDES AN EXTENDED SET OF WORKS. SUITABLE FOR THOSE WHO WANTS TO GET THE PERFECT RESULT.</p>
+                      <a href="#" class="third-screen__content-f-btn">
+                        gallery
+                        <img
+                          src="./src/assets/img/icons/arrow.svg"
+                          alt="arrow"
+                        />
+                      </a>
+                      <a href="#" class="third-screen__content-s-btn">
+                        list of services
+                        <img
+                          src="./src/assets/img/icons/w-arrow.svg"
+                          alt="arrow"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="third-screen__photo">
+                  <img
+                    src="./src/assets/img/third-screen-third.jpg"
+                    alt="Photo 3"
+                    class="third-screen__full-image third-screen__third-full-image"
+                  />
+                  <div class="third-screen__content-wrapper">
+                    <h2 class="third-screen__title content">Extra</h2>
+                  
+                  <div class="third-screen__content-block">
+                      <p class="third-screen__content-text">THE VIP STYLE INCLUDES AN EXTENDED SET OF WORKS. SUITABLE FOR THOSE WHO WANTS TO GET THE PERFECT RESULT.</p>
+                      <a href="#" class="third-screen__content-f-btn">
+                        gallery
+                        <img
+                          src="./src/assets/img/icons/arrow.svg"
+                          alt="arrow"
+                        />
+                      </a>
+                      <a href="#" class="third-screen__content-s-btn">
+                        list of services
+                        <img
+                          src="./src/assets/img/icons/w-arrow.svg"
+                          alt="arrow"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="first-screen__point-wrapper">
+              <div class="first-screen__point first-screen__point-active"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+              <div class="first-screen__point"></div>
+            </div>
+          </section>
         </div>
       </div>
-
-      </section>
-
-</div>
-      </div>
     </main>
-<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

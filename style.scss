@@ -5,10 +5,10 @@
 /////////////HEADER//////////////////////////
 
 .header {
-position: fixed;
-width: 100%;
+  position: fixed;
+  width: 100%;
 
-z-index: 6;
+  z-index: 6;
 
   &__wrapper {
     display: flex;
@@ -130,8 +130,6 @@ z-index: 6;
   }
 
   @include respond-to($xl-LapTop) {
-
-
     &__list::after {
       display: none;
     }
@@ -166,9 +164,9 @@ z-index: 6;
     }
   }
 
-     @include respond-to($xl-tablet) {
-      position: static;
-     }
+  @include respond-to($xl-tablet) {
+    position: static;
+  }
 
   @include respond-to($l-mobile) {
     &__request {
@@ -644,6 +642,7 @@ body.modal-open {
     position: relative;
     z-index: 5;
     position: fixed;
+    // width: 40px;
   }
 
   &__text {
@@ -655,6 +654,8 @@ body.modal-open {
     letter-spacing: 8.5px;
     opacity: 0.5;
     position: relative;
+    display: flex;
+    align-items: end;
   }
 
   &__text::before {
@@ -668,7 +669,8 @@ body.modal-open {
   }
 
   &__list {
-    margin-top: 294px;
+    top: 264px;
+    position: absolute;
   }
 
   &__item {
@@ -697,6 +699,7 @@ body.modal-open {
     }
 
     &__list {
+      top: 0;
       margin-top: 80%;
     }
 
@@ -947,7 +950,6 @@ body.modal-open {
 
   @include respond-to($xl-tablet) {
     height: auto;
-
 
     &__point-wrapper {
       display: none;
@@ -1206,7 +1208,7 @@ body.modal-open {
     &__btn {
       margin-left: 10vw;
       font-size: 13px;
-max-width: 380px;
+      max-width: 380px;
       letter-spacing: 5px;
     }
 
@@ -1319,7 +1321,6 @@ max-width: 380px;
 }
 
 .about-popup {
-
   &__content {
     padding-top: 15px;
     margin: 8% auto;
@@ -1334,15 +1335,15 @@ max-width: 380px;
     justify-content: space-between;
   }
 
-        &__content::after {
-      content: "";
-      width: 100%;
-      height: 1px;
-background: $main-color;
-opacity: 0.6;
-bottom: 80px;
-position: absolute;
-    }
+  &__content::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: $main-color;
+    opacity: 0.6;
+    bottom: 80px;
+    position: absolute;
+  }
 
   &__logo-wrapper {
     width: 409px;
@@ -1350,11 +1351,10 @@ position: absolute;
     background: gray;
     opacity: 0.8;
     border: 1px solid #000000;
-min-width: 260px;
+    min-width: 260px;
     img {
       width: 100%;
     }
-   
   }
 
   &__logo {
@@ -1382,24 +1382,21 @@ min-width: 260px;
     position: relative;
   }
 
-    &__item::before {
-      content: "";
-      position: absolute;
-      top: 12px;
-      left: -58px;
-      width: 8px;
-        height: 8px;
-        background: $main-color;
-        border-radius: 50%;
-    }
-
-  
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -58px;
+    width: 8px;
+    height: 8px;
+    background: $main-color;
+    border-radius: 50%;
+  }
 
   &__subtitle {
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 24px;
-    
   }
 
   &__text {
@@ -1420,41 +1417,243 @@ min-width: 260px;
     }
   }
 
-    @include respond-to($xl-LapTop) {
+  @include respond-to($xl-LapTop) {
+    &__content::after {
+      position: static;
+    }
+  }
 
-      &__content::after {
-position: static;
-      }
+  @include respond-to($LapTop) {
+    &__logo-wrapper {
+      display: none;
+    }
+  }
+
+  @include respond-to($m-tablet) {
+    &__content {
+      padding: 15px;
     }
 
-        @include respond-to($LapTop) {
+    &__item {
+      padding-bottom: 35px;
+    }
 
-          &__logo-wrapper {
-            display: none;
-          }
+    &__subtitle {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+.third-screen {
+  height: 100vh;
+  width: 100%;
+
+  &__inner {
+    top: 0;
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+
+  &__photo-gallery {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  &__photo {
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    transition: width 0.8s ease;
+    cursor: pointer;
+  }
+
+  &__photo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 2px;
+    transition: height 0.8s;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 52.28%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 5;
+  }
+
+  &__photo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &__full-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__first-full-image {
+    object-position: left;
+  }
+
+  &__third-full-image {
+    object-position: right;
+  }
+
+  &__photo:hover {
+    width: 140%;
+
+    .third-screen__title {
+      color: $secondary-color;
+      position: relative;
+    }
+
+    .third-screen__title::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 240px;
+      border-radius: 0 120px 120px 0;
+      border-top: 1px solid $main-color;
+      border-bottom: 1px solid $main-color;
+      border-right: 1px solid $main-color;
+      top: 50%;
+      left: 97%;
+      transform: translate(-50%, -50%);
+    }
+
+    .third-screen__content-block {
+      opacity: 1;
+      display: block;
+    }
+  }
+
+  &__content-wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 43px;
+    text-transform: uppercase;
+  }
+
+  &__content-block {
+    width: 479px;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease;
+    margin-left: 120px;
+  }
+
+  &__content-text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 35px;
+  }
+
+  &__content-f-btn,
+  &__content-s-btn {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: transform 0.3s ease;
+
+    img {
+      margin-left: 25px;
+    }
+  }
+
+  &__content-f-btn:hover,
+  &__content-s-btn:hover {
+    transform: translateX(10px);
+  }
+
+  &__content-f-btn {
+    margin-bottom: 69px;
+    color: $secondary-color;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  &__content-s-btn {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+    @include respond-to($l-desktop) {
+      &__title {
+          font-size: 26px;
+          line-height: 33px;
+        }
+      
+        &__content-block {
+          max-width: 279px;
+          margin-left: 70px;
+        }
+      
+        &__content-text {
+          
+          font-size: 16px;
+          line-height: 25px;
+          margin-bottom: 25px;
+        }
+      
+      
+        &__content-f-btn {
+          margin-bottom: 49px;
+         
+          font-size: 18px;
+          line-height: 20px;
+        }
+      
+        &__content-s-btn {
+         
+          font-size: 13px;
+         
         }
 
-                @include respond-to($m-tablet) {
-                 
-                  &__content {
-                    padding: 15px;
-                  }
+                &__photo:hover {
+                  width: 110%;
 
-                  &__item {
-                    padding-bottom: 35px;
-                  }
+                  .third-screen__title::after {
+                  
+                      width: 50px;
+                      height: 100px;
+                      border-radius: 0 100px 100px 0;
+                  
+                    }
+                }
 
-                                     &__subtitle {
-                                       font-size: 18px;
-                                       line-height: 22px;
-                                      
-                  
-                                     }
-                  
-                                     &__text {
-                                      
-                                       font-size: 14px;
-                                       line-height: 20px;
-                                     }
-                } 
+        
+    }
 }
