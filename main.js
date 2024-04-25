@@ -148,6 +148,162 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+/////////services list
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  const services = [
+    'Dismantling and erection of interior partitions',
+    'Wall treatments (alignment, finishing, wallpapering)',
+    'Electrical and low-current installations',
+    'Flooring services (screed pouring, laminate installation)',
+    'Installation of PVC floor plinth',
+    'Stretch ceiling',
+      'Cleaning after renovation',
+      'Aligning walls to look like a lighthouse, finishing walls to look like wallpaper',
+      'Drawing 90 degree angles',
+      'Electrical installation work (according to the project)',
+      'Installation of low-current wiring (Internet, antenna)',
+      'Waterproofing wet areas',
+      'Pouring floor screed (up to 10 cm, sand concrete/expanded clay)',
+      'Preparing walls for wallpapering',
+      'Wallpapering',
+      'Cleaning after renovation',
+      'Installation of gypsum board ceiling',
+      'Installation of inspection hatch in riser',
+      'Sink installation',
+    'Installation of bathtub/shower cabin',
+    
+  ];
+
+  
+  const serviceList = document.getElementById('service-list');
+
+  
+  services.map(function(serviceDescription) {
+    const listItem = document.createElement('li');
+    listItem.className = 'e-service__item';
+
+    const pointDiv = document.createElement('div');
+    pointDiv.className = 'e-service__point';
+
+    const textParagraph = document.createElement('p');
+    textParagraph.className = 'e-service__text';
+    textParagraph.textContent = serviceDescription;
+
+    
+    listItem.appendChild(pointDiv);
+    listItem.appendChild(textParagraph);
+
+   
+    serviceList.appendChild(listItem);
+  });
+    
+     const vipServiceList = document.getElementById('vip-service-list');
+
+  
+  services.map(function(serviceDescription) {
+    const listItem = document.createElement('li');
+    listItem.className = 'e-service__item';
+
+    const pointDiv = document.createElement('div');
+    pointDiv.className = 'e-service__point';
+
+    const textParagraph = document.createElement('p');
+    textParagraph.className = 'e-service__text';
+    textParagraph.textContent = serviceDescription;
+
+    
+    listItem.appendChild(pointDiv);
+    listItem.appendChild(textParagraph);
+
+   
+    vipServiceList.appendChild(listItem);
+  });
+    
+     const extraServiceList = document.getElementById('extra-service-list');
+
+  
+  services.map(function(serviceDescription) {
+    const listItem = document.createElement('li');
+    listItem.className = 'e-service__item';
+
+    const pointDiv = document.createElement('div');
+    pointDiv.className = 'e-service__point';
+
+    const textParagraph = document.createElement('p');
+    textParagraph.className = 'e-service__text';
+    textParagraph.textContent = serviceDescription;
+
+    
+    listItem.appendChild(pointDiv);
+    listItem.appendChild(textParagraph);
+
+   
+    extraServiceList.appendChild(listItem);
+  });
+});
+
+////////scroll
+
+const container = document.querySelector('.scroll-container');
+
+// Додати обробник події для прокрутки
+container.addEventListener('scroll', function(event) {
+    // Ваш код для обробки події прокрутки
+    console.log('Прокрутка відбувається!');
+});
+
+
+
+
+/////////swiper
+
+const swiper = new Swiper(".swiper", {
+  
+  direction: "horizontal",
+  loop: true,
+
+  pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+
+  
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+
+  
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    function formatNumberWithLeadingZero(num) {
+        return num < 10 ? `0${num}` : `${num}`;
+    }
+
+    const paginationElement = document.getElementById('pagination');
+
+    if (paginationElement) {
+        const currentPageElement = paginationElement.querySelector('.swiper-pagination-current');
+        const totalPagesElement = paginationElement.querySelector('.swiper-pagination-total');
+
+        if (currentPageElement && totalPagesElement) {
+            let currentPage = parseInt(currentPageElement.textContent.trim());
+            let totalPages = parseInt(totalPagesElement.textContent.trim());
+
+            currentPageElement.textContent = formatNumberWithLeadingZero(currentPage);
+            totalPagesElement.textContent = formatNumberWithLeadingZero(totalPages);
+        }
+    }
+});
+
+
+
+
+
 
 // document.addEventListener("DOMContentLoaded", function() {
 //     const slider = document.querySelector(".slider");

@@ -13,6 +13,10 @@
       href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WALTER-HOUSE</title>
   </head>
@@ -364,15 +368,6 @@
               </button>
             </div>
 
-            <div class="first-screen__point-wrapper">
-              <div class="first-screen__point first-screen__point-active"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-            </div>
-
             <div class="first-screen__contact-form second-screen__contact-form">
               <form class="contact-form">
                 <div class="first-screen__input-wrapper">
@@ -499,24 +494,50 @@
             <div class="first-screen__inner third-screen__inner">
               <div class="third-screen__photo-gallery">
                 <div class="third-screen__photo">
-                  <img
-                    src="./src/assets/img/third-screen-first.jpg"
-                    alt="Photo 1"
-                    class="third-screen__full-image third-screen__first-full-image"
-                  />
+                  <picture>
+                    <source
+                      media="(min-width: 800px)"
+                      srcset="./src/assets/img/third-screen-first.jpg"
+                    />
+
+                    <source
+                      media="(min-width: 360px)"
+                      srcset="./src/assets/img/third-screen-first-tab.jpg"
+                    />
+                    <source
+                      media="(min-width: 200px)"
+                      srcset="./src/assets/img/third-screen-first-mob.jpg"
+                    />
+                    <img
+                      src="./src/assets/img/third-screen-first.jpg"
+                      alt="Photo 2"
+                      class="third-screen__full-image"
+                    />
+                  </picture>
                   <div class="third-screen__content-wrapper">
                     <h2 class="third-screen__title content">Elite</h2>
 
                     <div class="third-screen__content-block">
-                      <p class="third-screen__content-text">THE VIP STYLE INCLUDES AN EXTENDED SET OF WORKS. SUITABLE FOR THOSE WHO WANTS TO GET THE PERFECT RESULT.</p>
-                      <a href="#" class="third-screen__content-f-btn">
-                        gallery
+                      <p class="third-screen__content-text">
+                        THE VIP STYLE INCLUDES AN EXTENDED SET OF WORKS.
+                        SUITABLE FOR THOSE WHO WANTS TO GET THE PERFECT RESULT.
+                      </p>
+                      <a
+                        href="#"
+                        class="third-screen__content-f-btn openModalBtn"
+                        data-modal-target="eliteGallery"
+                      >
+                        <p>gallery</p>
                         <img
                           src="./src/assets/img/icons/arrow.svg"
                           alt="arrow"
                         />
                       </a>
-                      <a href="#" class="third-screen__content-s-btn">
+                      <a
+                        href="#"
+                        class="third-screen__content-s-btn openModalBtn"
+                        data-modal-target="eliteServices"
+                      >
                         list of services
                         <img
                           src="./src/assets/img/icons/w-arrow.svg"
@@ -528,24 +549,51 @@
                 </div>
 
                 <div class="third-screen__photo">
-                  <img
-                    src="./src/assets/img/third-screen-second.jpg"
-                    alt="Photo 2"
-                    class="third-screen__full-image"
-                  />
+                  <picture>
+                    <source
+                      media="(min-width: 800px)"
+                      srcset="./src/assets/img/third-screen-second.jpg"
+                    />
+
+                    <source
+                      media="(min-width: 360px)"
+                      srcset="./src/assets/img/third-screen-second-tab.jpg"
+                    />
+                    <source
+                      media="(min-width: 200px)"
+                      srcset="./src/assets/img/third-screen-second-mob.jpg"
+                    />
+                    <img
+                      src="./src/assets/img/third-screen-second.jpg"
+                      alt="Photo 2"
+                      class="third-screen__full-image"
+                    />
+                  </picture>
                   <div class="third-screen__content-wrapper">
                     <h2 class="third-screen__title content">VIP</h2>
-                 
+
                     <div class="third-screen__content-block">
-                      <p class="third-screen__content-text">THE VIP STYLE INCLUDES AN EXTENDED SET OF WORKS. SUITABLE FOR THOSE WHO WANTS TO GET THE PERFECT RESULT.</p>
-                      <a href="#" class="third-screen__content-f-btn">
-                        gallery
+                      <p class="third-screen__content-text">
+                        THE VIP STYLE INCLUDES AN EXTENDED SET OF WORKS.
+                        SUITABLE FOR THOSE WHO WANTS TO GET THE PERFECT RESULT.
+                      </p>
+                      <a
+                        href="#"
+                        class="third-screen__content-f-btn openModalBtn"
+                        data-modal-target="vipGallery"
+                      >
+                        <p>gallery</p>
+
                         <img
                           src="./src/assets/img/icons/arrow.svg"
                           alt="arrow"
                         />
                       </a>
-                      <a href="#" class="third-screen__content-s-btn">
+                      <a
+                        href="#"
+                        class="third-screen__content-s-btn openModalBtn"
+                        data-modal-target="vipServices"
+                      >
                         list of services
                         <img
                           src="./src/assets/img/icons/w-arrow.svg"
@@ -557,24 +605,50 @@
                 </div>
 
                 <div class="third-screen__photo">
-                  <img
-                    src="./src/assets/img/third-screen-third.jpg"
-                    alt="Photo 3"
-                    class="third-screen__full-image third-screen__third-full-image"
-                  />
+                  <picture>
+                    <source
+                      media="(min-width: 800px)"
+                      srcset="./src/assets/img/third-screen-third.jpg"
+                    />
+
+                    <source
+                      media="(min-width: 360px)"
+                      srcset="./src/assets/img/third-screen-third-tab.jpg"
+                    />
+                    <source
+                      media="(min-width: 200px)"
+                      srcset="./src/assets/img/third-screen-third-mob.jpg"
+                    />
+                    <img
+                      src="./src/assets/img/third-screen-third.jpg"
+                      alt="Photo 3"
+                      class="third-screen__full-image third-screen__third-full-image"
+                    />
+                  </picture>
                   <div class="third-screen__content-wrapper">
                     <h2 class="third-screen__title content">Extra</h2>
-                  
-                  <div class="third-screen__content-block">
-                      <p class="third-screen__content-text">THE VIP STYLE INCLUDES AN EXTENDED SET OF WORKS. SUITABLE FOR THOSE WHO WANTS TO GET THE PERFECT RESULT.</p>
-                      <a href="#" class="third-screen__content-f-btn">
-                        gallery
+
+                    <div class="third-screen__content-block">
+                      <p class="third-screen__content-text">
+                        THE VIP STYLE INCLUDES AN EXTENDED SET OF WORKS.
+                        SUITABLE FOR THOSE WHO WANTS TO GET THE PERFECT RESULT.
+                      </p>
+                      <a
+                        href="#"
+                        class="third-screen__content-f-btn openModalBtn"
+                        data-modal-target="extraGallery"
+                      >
+                        <p>gallery</p>
                         <img
                           src="./src/assets/img/icons/arrow.svg"
                           alt="arrow"
                         />
                       </a>
-                      <a href="#" class="third-screen__content-s-btn">
+                      <a
+                        href="#"
+                        class="third-screen__content-s-btn openModalBtn"
+                        data-modal-target="extraServices"
+                      >
                         list of services
                         <img
                           src="./src/assets/img/icons/w-arrow.svg"
@@ -587,18 +661,600 @@
               </div>
             </div>
 
-            <div class="first-screen__point-wrapper">
-              <div class="first-screen__point first-screen__point-active"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
+            <!-- ///////////////////////services list pop up///////////////// -->
+
+            <div
+              id="eliteServices"
+              class="header-modal main-popUp e-service__modal"
+            >
+              <div class="header-modal__content e-service__content">
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="close e-service__close"
+                />
+
+                <div class="e-service__title-wrapper">
+                  <h2 class="third-screen__title content e-service__title">
+                    Elite
+                  </h2>
+                </div>
+                <h3 class="e-service__subtitle content">from 3000 UAH</h3>
+                <ul
+                  id="service-list"
+                  class="e-service__list scroll-container custom-scrollbar"
+                ></ul>
+              </div>
+            </div>
+
+            <div
+              id="vipServices"
+              class="header-modal main-popUp e-service__modal"
+            >
+              <div class="header-modal__content e-service__content">
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="close e-service__close"
+                />
+
+                <div class="e-service__title-wrapper">
+                  <h2 class="third-screen__title content e-service__title">
+                    Vip
+                  </h2>
+                </div>
+                <h3 class="e-service__subtitle content">from 5000 UAH</h3>
+                <ul id="vip-service-list" class="e-service__list"></ul>
+              </div>
+            </div>
+
+            <div
+              id="extraServices"
+              class="header-modal main-popUp e-service__modal"
+            >
+              <div class="header-modal__content e-service__content">
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="close e-service__close"
+                />
+
+                <div class="e-service__title-wrapper">
+                  <h2 class="third-screen__title content e-service__title">
+                    Extra
+                  </h2>
+                </div>
+                <h3 class="e-service__subtitle content">from 8000 UAH</h3>
+                <ul id="extra-service-list" class="e-service__list"></ul>
+              </div>
+            </div>
+
+            <!-- //////////////////////gallery modal window///////////////////////// -->
+
+            <div
+              id="eliteGallery"
+              class="header-modal main-popUp gallery-modal"
+            >
+              <div class="gallery-modal__content">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/elite-first.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/elite-first-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/elite-first-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/elite-first.jpg"
+                          alt="Photo 2"
+                          class="third-screen__full-image gallery-modal__img"
+                        />
+                      </picture>
+                      
+                      <div class="gallery-modal__point-wrapper">
+                        <div class="gallery-modal__point"></div>
+                      </div>
+
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/elite-second.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/elite-second-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/elite-second-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/elite-second.jpg"
+                          alt="Photo 2"
+                          class="third-screen__full-image gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/elite-third.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/elite-third-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/elite-third-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/elite-third.jpg"
+                          alt="Photo 2"
+                          class="third-screen__full-image gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/elite-forth.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/elite-forth-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/elite-forth-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/elite-forth.jpg"
+                          alt="Photo 2"
+                          class="third-screen__full-image gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+
+                  <div class="gallery-modal__padination-wrapper">
+                    <div
+                      class="swiper-button-prev gallery-modal__swiper-button-prev"
+                    >
+                      <img
+                        src="./src/assets/img/icons/arrow-left.svg"
+                        alt="arrow"
+                      />
+                    </div>
+
+                    <div id="pagination" class="swiper-pagination"></div>
+
+                    <div
+                      class="swiper-button-next gallery-modal__swiper-button-next"
+                    >
+                      <img
+                        src="./src/assets/img/icons/arrow-right.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ///////////////vip modal window////////////////////////// -->
+
+            <div id="vipGallery" class="header-modal main-popUp gallery-modal">
+              <div class="gallery-modal__content">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/vip-first.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/vip-first-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/vip-first-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/vip-first.jpg"
+                          alt="Photo 2"
+                          class="third-screen__full-image gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/vip-second.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/vip-second-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/vip-second-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/vip-second.jpg"
+                          alt="Photo 2"
+                          class="third-screen__full-image gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/vip-third.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/vip-third-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/vip-third-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/vip-third.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/vip-forth.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/vip-forth-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/vip-forth-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/vip-forth.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/vip-fifth.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/vip-fifth-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/vip-fifth-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/vip-fifth.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/vip-sixth.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/vip-sixth-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/vip-sixth-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/vip-sixth.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+
+                  <div class="gallery-modal__padination-wrapper">
+                    <div
+                      class="swiper-button-prev gallery-modal__swiper-button-prev"
+                    >
+                      <img
+                        src="./src/assets/img/icons/arrow-left.svg"
+                        alt="arrow"
+                      />
+                    </div>
+
+                    <div id="pagination" class="swiper-pagination"></div>
+
+                    <div
+                      class="swiper-button-next gallery-modal__swiper-button-next"
+                    >
+                      <img
+                        src="./src/assets/img/icons/arrow-right.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ///////////////extra modal window////////////////////////// -->
+
+            <div
+              id="extraGallery"
+              class="header-modal main-popUp gallery-modal"
+            >
+              <div class="gallery-modal__content">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/extra-first.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/extra-first-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/extra-first-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/extra-first.jpg"
+                          alt="Photo 2"
+                          class="third-screen__full-image gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/extra-second.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/extra-second-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/extra-second-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/extra-second.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/extra-third.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/extra-third-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/extra-third-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/extra-third.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/extra-forth.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/extra-forth-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/extra-forth-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/extra-forth.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/extra-fifth.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 360px)"
+                          srcset="./src/assets/img/extra-fifth-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/extra-fifth-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/extra-fifth.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/third-screen-third.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/third-screen-third-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/third-screen-third-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/third-screen-third.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/extra-seventh.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/extra-seventh-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 200px)"
+                          srcset="./src/assets/img/extra-seventh-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/extra-seventh.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide gallery-modal__swiper-slide">
+                      <picture>
+                        <source
+                          media="(min-width: 769px)"
+                          srcset="./src/assets/img/extra-eighth.jpg"
+                        />
+
+                        <source
+                          media="(min-width: 460px)"
+                          srcset="./src/assets/img/extra-eighth-tab.jpg"
+                        />
+                        <source
+                          media="(min-width: 150px)"
+                          srcset="./src/assets/img/extra-eighth-mob.jpg"
+                        />
+                        <img
+                          src="./src/assets/img/extra-eighth.jpg"
+                          alt="Photo 2"
+                          class="gallery-modal__img"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+
+                  <div class="gallery-modal__padination-wrapper">
+                    <div
+                      class="swiper-button-prev gallery-modal__swiper-button-prev"
+                    >
+                      <img
+                        src="./src/assets/img/icons/arrow-left.svg"
+                        alt="arrow"
+                      />
+                    </div>
+
+                    <div id="pagination" class="swiper-pagination"></div>
+
+                    <div
+                      class="swiper-button-next gallery-modal__swiper-button-next"
+                    >
+                      <img
+                        src="./src/assets/img/icons/arrow-right.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
       </div>
     </main>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
