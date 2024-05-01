@@ -9,6 +9,16 @@ html {
     /* Вимкнути зовнішню прокрутку сторінки */
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); // Початковий стан - за межами батьківського елемента
+    }
+
+    to {
+        transform: translateX(0); // Кінцевий стан - зсув зліва направо
+    }
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;

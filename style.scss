@@ -851,7 +851,7 @@ body.modal-open {
 
   &__contact-form {
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     bottom: -1px;
     right: 0;
     width: 60vw;
@@ -1460,8 +1460,6 @@ body.modal-open {
     padding-bottom: 0;
   }
 
-   
-
   &__photo-gallery {
     display: flex;
     justify-content: space-between;
@@ -1612,6 +1610,14 @@ body.modal-open {
     line-height: 20px;
   }
 
+    @include respond-to($xl-LapTop) {
+
+      &__content-block {
+          max-width: 349px;
+          margin-left: 80px;
+        }
+    }
+
   @include respond-to($l-desktop) {
     &__title {
       font-size: 26px;
@@ -1721,8 +1727,8 @@ body.modal-open {
     &__content-text {
       font-size: 16px;
       line-height: 24px;
-      margin-bottom: 92px;
-      margin-top: 150px;
+      margin-bottom: 72px;
+      margin-top: 100px;
       text-align: center;
     }
 
@@ -1761,8 +1767,8 @@ body.modal-open {
     &__content-text {
       font-size: 16px;
       line-height: 24px;
-      margin-bottom: 47px;
-      margin-top: 58px;
+      margin-bottom: 7px;
+      margin-top: 44px;
     }
 
     &__content-f-btn {
@@ -1797,6 +1803,8 @@ body.modal-open {
       }
     }
   }
+
+
 }
 
 .e-service {
@@ -1928,6 +1936,7 @@ body.modal-open {
     }
   }
 
+
   @include respond-to($m-mobile) {
     &__item {
       max-width: 395px;
@@ -1942,8 +1951,12 @@ body.modal-open {
   }
 }
 
+.swiper-pagination {
+  position: relative;
+}
+
 .gallery-modal {
-z-index: 4;
+  z-index: 4;
 
   &__content {
     background-color: transparent;
@@ -1956,10 +1969,61 @@ z-index: 4;
     z-index: 3;
   }
 
-    &__point-wrapper {
-      position: absolute;
-      z-index: 6;
+  &__tab-btn {
+    display: none;
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 4;
+    color: $main-color;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 3px;
+    top: 160px;
+    right: 178px;
+    display: flex;
+    align-items: center;
+    transition: transform 1s ease;
+
+    img {
+      margin-left: 30px;
     }
+
+    
+  }
+
+    &__btn:hover {
+      color: $secondary-color;
+      transform: translateX(10px);
+    }
+
+  &__point-wrapper {
+    position: absolute;
+    z-index: 6;
+  }
+
+  &__point-wrapper:hover {
+    .gallery-modal__point {
+      background: $secondary-color;
+    }
+
+    .gallery-modal__small-point-wrapper {
+      opacity: 1;
+
+      left: 222px;
+      animation: slideIn 0.5s forwards;
+    }
+
+    .gallery-modal__point-text {
+      opacity: 1;
+    }
+
+    .gallery-modal__point::after,
+    .gallery-modal__point::before {
+      border: 1px solid $secondary-color;
+    }
+  }
 
   &__point {
     width: 14px;
@@ -1967,6 +2031,7 @@ z-index: 4;
     background: $main-color;
     border-radius: 50%;
     position: relative;
+    cursor: pointer;
   }
 
   &__point::before {
@@ -1976,32 +2041,83 @@ z-index: 4;
     border: 1px solid $main-color;
     position: absolute;
     border-radius: 50%;
-top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-    &__point::after {
-      content: "";
-      width: 46px;
-      height: 46px;
-      border: 1px solid $main-color;
-      position: absolute;
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+  &__point::after {
+    content: "";
+    width: 46px;
+    height: 46px;
+    border: 1px solid $main-color;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-&__img {
-  position: absolute;
+  &__small-point-wrapper {
+    position: absolute;
+    left: 220px;
+    top: -40px;
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+  }
+
+  &__point-text {
+    width: 170px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    position: absolute;
+    top: -110px;
+    left: 90px;
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+  }
+
+  &__small-point {
+    width: 9px;
+    height: 9px;
+    background: $secondary-color;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__small-point::after {
+    content: "";
+    width: 140px;
+    height: 1px;
+    background: $secondary-color;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+  }
+
+  &__small-point::before {
+    content: "";
+    width: 80px;
+    height: 1px;
+    background: $secondary-color;
+    position: absolute;
+    top: 24px;
+    right: 143px;
+    rotate: 150deg;
+  }
+
+  &__img {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
-}
+  }
 
   &__swiper-slide {
     position: relative;
@@ -2039,22 +2155,6 @@ top: 50%;
     left: 15%;
   }
 
-  // .swiper-button-prev,
-  // .swiper-rtl .swiper-button-next {
-  //   left: var(--swiper-navigation-sides-offset, 32px);
-  //   right: auto;
-  // }
-
-  // .swiper-button-next,
-  // .swiper-rtl .swiper-button-prev {
-  //   right: var(--swiper-navigation-sides-offset, 32px);
-  //   left: auto;
-  // }
-
-  // &__swiper-button-prev {
-  //   position: relative;
-  // }
-
   &__swiper-button-prev::before {
     content: "";
     width: 260px;
@@ -2063,8 +2163,14 @@ top: 50%;
     opacity: 0.3;
     position: absolute;
     top: 50%;
-    left: 600%;
+    left: 400%;
     transform: translate(-50%, -50%);
+  }
+
+  &__swiper-button-prev {
+    img {
+      margin-right: 130px;
+    }
   }
 
   &__swiper-button-next::before {
@@ -2079,9 +2185,135 @@ top: 50%;
     transform: translate(-50%, -50%);
   }
 
- 
+  @include respond-to($xxl-LapTop) {
+    &__padination-wrapper {
+      width: 582px;
+      left: 10%;
+    }
 
-   
+    &__swiper-button-prev::before {
+      content: "";
+      width: 160px;
+    }
+
+    &__swiper-button-prev {
+      img {
+        margin-right: 50px;
+      }
+    }
+
+    &__swiper-button-next::before {
+      content: "";
+      width: 160px;
+    }
+  }
+
+  @include respond-to($l-desktop) {
+    &__padination-wrapper {
+      width: 382px;
+      left: 10%;
+    }
+
+    &__swiper-button-prev::before {
+      content: "";
+      width: 100px;
+      left: 200%;
+    }
+
+    &__swiper-button-prev {
+      img {
+        margin-right: 40px;
+      }
+    }
+
+    &__swiper-button-next::before {
+      content: "";
+      width: 100px;
+      left: -200%;
+    }
+  }
+
+  @include respond-to($xl-tablet) {
+    z-index: 6;
+
+    &__padination-wrapper {
+      width: 92%;
+      left: 5%;
+    }
+
+    &__swiper-button-prev::before {
+      content: "";
+      width: 180px;
+      left: 450%;
+    }
+
+    &__swiper-button-prev {
+      img {
+        margin-right: 40px;
+      }
+    }
+
+    &__swiper-button-next::before {
+      content: "";
+      width: 180px;
+      left: -450%;
+    }
+
+    &__tab-btn {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 7;
+    }
+
+    &__btn {
+      display: none;
+    }
+  }
+
+    @include respond-to($l-mobile) {
+
+      &__swiper-button-prev::before,
+      &__swiper-button-next::before {
+          display: none;
+        }
+      
+        &__swiper-button-prev {
+          img {
+            margin-right: 40px;
+          }
+        }
+      
+                 &__point-wrapper:hover {
+                   .gallery-modal__point {
+                     background: inherit;
+                     
+                   }
+        
+                   .gallery-modal__small-point-wrapper {
+                     opacity: 0;
+                    
+                     left: 0;
+                    
+                     animation: none;
+                    
+                   }
+        
+                   .gallery-modal__point-text {
+                     opacity: 0;
+                    
+                   }
+        
+                   
+                   .gallery-modal__point::after,
+                   .gallery-modal__point::before {
+                     border: none;
+                    
+                   }
+                 }
+
+    }
 
   @include respond-to($m-mobile) {
     .third-screen__full-image {
@@ -2094,7 +2326,1178 @@ top: 50%;
   height: 100vh !important;
 }
 
+.swiper-custom-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 185px;
+    height: 1px;
+    background: $main-color;
+    opacity: 0.4;
+    z-index: 5;
+    rotate: 30deg;
+    top: 50px;
+    left: 35%;
+
+    @include respond-to($xxl-LapTop) {
+      left: 30%;
+      top: 40px;
+    }
+
+    @include respond-to($l-desktop) {
+      left: 20%;
+      top: 40px;
+    }
+
+    @include respond-to($xl-tablet) {
+      left: 35%;
+      top: 35px;
+    }
+
+         @include respond-to($l-mobile) {
+          left: 27%;
+         }
+
+                 @include respond-to($s-mobile) {
+                  left: 20%;
+                 }
+
+                                 @include respond-to($mobile) {
+                                   left: 15%;
+                                 }
+  }
+}
+
+.swiper-custom-pagination .swiper-pagination-current {
+  color: $secondary-color;
+  position: absolute;
+  top: -20px;
+  right: 45%;
+  font-weight: 400;
+  font-size: 48px;
+  font-family: "Bruno Ace", sans-serif;
+  z-index: 5;
+
+  @include respond-to($xl-tablet) {
+    right: 40%;
+  }
+
+     @include respond-to($l-mobile) {
+      right: 35%;
+     }
+
+         @include respond-to($s-mobile) {
+           right: 25%;
+         }
+}
+
+.swiper-custom-pagination .swiper-pagination-total {
+  color: $main-color;
+  position: absolute;
+  top: 55px;
+  left: 38%;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Bruno Ace", sans-serif;
+  z-index: 5;
+
+  @include respond-to($l-mobile) {
+    left: 30%;
+  }
+
+    @include respond-to($s-mobile)  {
+      left: 25%;
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 100%;
+}
+
 .swiper-button-prev::after,
 .swiper-button-next:after {
   content: "";
+}
+
+.point {
+  &-right-bottom {
+    transform: scaleY(-1);
+
+    .gallery-modal__point-text {
+      transform: scaleY(-1);
+    }
+  }
+
+  &-left-top {
+    transform: scaleX(-1);
+
+    .gallery-modal__point-text {
+      transform: scaleX(-1);
+    }
+  }
+
+  &-left-bottom {
+    rotate: -180deg;
+
+    .gallery-modal__point-text {
+      rotate: -180deg;
+    }
+  }
+}
+
+.gallery-modal__point-wrapper {
+  position: absolute;
+
+  &-first {
+    left: 21.5%;
+    top: 39.5%;
+  }
+
+  &-second {
+    left: 39.5%;
+    top: 27%;
+  }
+
+  &-third {
+    right: 28.5%;
+    top: 55.5%;
+
+    .gallery-modal__point-text {
+      top: -100px;
+      left: 50px;
+    }
+  }
+
+  &-forth {
+    right: 47%;
+    bottom: 21%;
+
+    .gallery-modal__point-text {
+      top: -100px;
+      left: 50px;
+    }
+  }
+
+  &-fifth {
+    right: 50%;
+    top: 36%;
+
+    .gallery-modal__point-text {
+      top: -100px;
+      left: 50px;
+    }
+  }
+
+  @include respond-to($xl-tablet) {
+    &-fifth,
+    &-first {
+      display: none;
+    }
+  }
+
+  &-elite {
+    &-s-first {
+      left: 21%;
+      bottom: 29.5%;
+    }
+
+    &-s-second {
+      right: 47%;
+      bottom: 21%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 50px;
+      }
+    }
+
+    &-s-fifth {
+      right: 34.5%;
+      top: 40%;
+
+      .gallery-modal__point-text {
+        top: -140px;
+        left: 50px;
+      }
+    }
+
+    &-s-third {
+      left: 40.5%;
+      top: 58%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+      }
+    }
+
+    &-s-forth {
+      left: 16%;
+      top: 21%;
+
+      .gallery-modal__point-text {
+        top: -120px;
+        left: 80px;
+      }
+    }
+
+    &-t-first {
+      left: 14.5%;
+      bottom: 33.5%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 80px;
+      }
+    }
+
+    &-t-second {
+      right: 52%;
+      bottom: 16%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 55px;
+      }
+    }
+
+    &-t-fifth {
+      right: 41.5%;
+      top: 37.5%;
+
+      .gallery-modal__point-text {
+        top: -120px;
+        left: 80px;
+      }
+    }
+
+    &-t-third {
+      left: 42.5%;
+      top: 57%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+      }
+    }
+
+    &-t-forth {
+      left: 44%;
+      top: 19%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-fo-first {
+      left: 22%;
+      top: 28%;
+
+      .gallery-modal__point-text {
+        top: -10px;
+        left: 80px;
+      }
+    }
+
+    &-fo-second {
+      right: 52%;
+      bottom: 17%;
+
+      .gallery-modal__point-text {
+        top: -130px;
+        left: 55px;
+      }
+    }
+
+    &-fo-fifth {
+      left: 17%;
+      top: 43.5%;
+
+      .gallery-modal__point-text {
+        top: -72px;
+        left: 80px;
+      }
+    }
+
+    &-fo-third {
+      left: 63%;
+      top: 55%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 60px;
+      }
+    }
+
+    @include respond-to($xl-tablet) {
+      &-s-third,
+      &-s-first,
+      &-t-second,
+      &-t-third,
+      &-fo-second,
+      &-fo-first {
+        display: none;
+      }
+    }
+  }
+
+  &-vip {
+    &-f-first {
+      left: 23%;
+      bottom: 53.5%;
+    }
+
+    &-f-second {
+      right: 74.5%;
+      bottom: 17%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 80px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              bottom: 23%;
+            }
+    }
+
+    &-f-fifth {
+      right: 55%;
+      top: 53%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 75px;
+      }
+    }
+
+    &-f-third {
+      left: 63%;
+      top: 19%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 50px;
+      }
+
+            @include respond-to($xl-LapTop) {
+left: 55%;
+            }
+    }
+
+    &-f-forth {
+      right: 26.5%;
+      top: 44%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 50px;
+      }
+    }
+
+    &-s-first {
+      left: 18%;
+      bottom: 55%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-s-second {
+      right: 51.5%;
+      bottom: 53%;
+
+      .gallery-modal__point-text {
+        top: -125px;
+        left: 70px;
+      }
+    }
+
+    &-s-fifth {
+      right: 66.5%;
+      top: 65.5%;
+
+      .gallery-modal__point-text {
+        top: -85px;
+        left: 80px;
+      }
+    }
+
+    &-s-third {
+      left: 65.5%;
+      top: 22%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 50px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              left: 40%;
+            }
+    }
+
+    &-s-forth {
+      right: 48.5%;
+      top: 56%;
+
+      .gallery-modal__point-text {
+        top: -85px;
+        left: 80px;
+        width: 130px;
+      }
+    }
+
+    &-t-first {
+      left: 23%;
+      top: 18%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-t-second {
+      left: 13.5%;
+      top: 32%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-t-fifth {
+      right: 76%;
+      top: 71.5%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-t-third {
+      left: 39%;
+      top: 35.5%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 70px;
+      }
+    }
+
+    &-t-forth {
+      right: 26.5%;
+      top: 41.5%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 50px;
+      }
+    }
+
+    &-fo-first {
+      left: 17.5%;
+      top: 44%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 80px;
+      }
+    }
+
+    &-fo-second {
+      left: 34.5%;
+      top: 27.5%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-fo-fifth {
+      left: 14.5%;
+      top: 73.5%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-fo-third {
+      left: 61.5%;
+      top: 17%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 50px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              left: 50%;
+              top: 25%;
+            }
+    }
+
+    &-fo-forth {
+      right: 22.5%;
+      top: 37.5%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 50px;
+      }
+    }
+
+    &-fif-first {
+      left: 49.5%;
+      top: 18.5%;
+
+      .gallery-modal__point-text {
+        top: -105px;
+        left: 50px;
+      }
+    }
+
+    &-fif-second {
+      left: 27.5%;
+      top: 55.5%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-fif-fifth {
+      left: 18%;
+      top: 73%;
+
+      .gallery-modal__point-text {
+        top: -120px;
+        left: 80px;
+      }
+    }
+
+    &-fif-third {
+      left: 53%;
+      top: 72%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 50px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              left: 47%;
+            }
+    }
+
+    &-fif-forth {
+      right: 35%;
+      top: 58.5%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 50px;
+      }
+    }
+
+    &-six-first {
+      left: 16.5%;
+      top: 37.5%;
+
+      .gallery-modal__point-text {
+        top: -95px;
+        left: 80px;
+      }
+    }
+
+    &-six-second {
+      left: 21.5%;
+      top: 75%;
+
+      .gallery-modal__point-text {
+        top: -70px;
+        left: 90px;
+      }
+    }
+
+    &-six-fifth {
+      left: 30.5%;
+      top: 35.5%;
+
+      .gallery-modal__point-text {
+        top: -120px;
+        left: 80px;
+      }
+    }
+
+    &-six-third {
+      left: 57.5%;
+      top: 45.5%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 50px;
+      }
+    }
+
+    &-six-forth {
+      right: 33.5%;
+      top: 21%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 50px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              right: 40%;
+            }
+    }
+
+    @include respond-to($xl-tablet) {
+      &-f-second,
+      &-f-fifth,
+      &-s-fifth,
+      &-s-second,
+      &-t-third,
+      &-t-second,
+      &-fo-second,
+      &-fo-forth,
+      &-fif-fifth,
+      &-fif-forth,
+      &-six-first,
+      &-six-fifth {
+        display: none;
+      }
+    }
+  }
+
+  &-extra {
+    &-f-first {
+      left: 25.5%;
+      bottom: 40.5%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-f-second {
+      right: 67.5%;
+      bottom: 64%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-f-fifth {
+      right: 43%;
+      top: 60%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 85px;
+      }
+    }
+
+    &-f-third {
+      left: 67%;
+      top: 25%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 50px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              left: 47%;
+            }
+    }
+
+    &-f-forth {
+      right: 24%;
+      top: 48%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 50px;
+      }
+    }
+
+    &-s-first {
+      left: 19.5%;
+      bottom: 53%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-s-second {
+      right: 49.5%;
+      top: 16%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 60px;
+      } 
+
+            @include respond-to($xl-LapTop){
+              top: 29%;
+            }
+    }
+
+    &-s-fifth {
+      left: 26%;
+      top: 61%;
+
+      .gallery-modal__point-text {
+        top: -85px;
+        left: 80px;
+      }
+    }
+
+    &-s-third {
+      left: 60%;
+      top: 54%;
+
+      .gallery-modal__point-text {
+        top: -120px;
+        left: 50px;
+      }
+    }
+
+    &-s-forth {
+      right: 61%;
+      top: 70%;
+
+      .gallery-modal__point-text {
+        top: -140px;
+        left: 80px;
+      }
+    }
+
+    &-t-first {
+      left: 17.5%;
+      top: 34%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-t-second {
+      left: 28%;
+      top: 64%;
+
+      .gallery-modal__point-text {
+        top: -120px;
+        left: 80px;
+      }
+    }
+
+    &-t-fifth {
+      right: 44.5%;
+      top: 70%;
+
+      .gallery-modal__point-text {
+        top: -130px;
+        left: 60px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              top: 60%;
+            }
+    }
+
+    &-t-third {
+      left: 55.5%;
+      top: 27.5%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 70px;
+      }
+    }
+
+    &-t-forth {
+      right: 39.5%;
+      top: 54.5%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 50px;
+      }
+    }
+
+    &-fo-first {
+      left: 15.5%;
+      top: 47%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 80px;
+      }
+    }
+
+    &-fo-second {
+      left: 24%;
+      top: 21%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-fo-fifth {
+      left: 13%;
+      top: 65%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-fo-third {
+      left: 54%;
+      top: 16%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 50px;
+      }
+
+            @include respond-to($xl-LapTop){
+              top: 30%;
+            }
+    }
+
+    &-fo-forth {
+      right: 42%;
+      top: 48.5%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 50px;
+      }
+    }
+
+    &-fif-first {
+      left: 49.5%;
+      top: 15.5%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 50px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              top: 30%;
+            }
+    }
+
+    &-fif-second {
+      left: 28.5%;
+      top: 45%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 80px;
+      }
+    }
+
+    &-fif-fifth {
+      left: 62.5%;
+      top: 32.5%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-fif-third {
+      left: 49%;
+      top: 79.5%;
+
+      .gallery-modal__point-text {
+        top: -140px;
+        left: 50px;
+      }
+    }
+
+    &-fif-forth {
+      right: 26.5%;
+      top: 53.5%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 50px;
+      }
+    }
+
+    &-six-first {
+      left: 64.5%;
+      top: 16.5%;
+
+      .gallery-modal__point-text {
+        top: -140px;
+        left: 50px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              top: 30%;
+            }
+    }
+
+    &-six-second {
+      left: 46%;
+      top: 42.5%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-six-fifth {
+      left: 28%;
+      top: 64%;
+
+      .gallery-modal__point-text {
+        top: -120px;
+        left: 80px;
+      }
+    }
+
+    &-six-third {
+      left: 52%;
+      top: 75.5%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 50px;
+      }
+    }
+
+    &-six-forth {
+      right: 46.5%;
+      top: 63%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-six-sixth {
+      right: 22.5%;
+      top: 50%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 50px;
+      }
+    }
+
+    &-svn-first {
+      left: 22%;
+      top: 20.5%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-svn-second {
+      left: 21%;
+      top: 60.5%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 80px;
+      }
+    }
+
+    &-svn-fifth {
+      left: 15%;
+      top: 44%;
+
+      .gallery-modal__point-text {
+        top: -90px;
+        left: 80px;
+      }
+    }
+
+    &-svn-third {
+      left: 36.5%;
+      top: 55.5%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-svn-forth {
+      right: 72%;
+      top: 83%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 80px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              top: 75%;
+            }
+    }
+
+    &-eig-first {
+      left: 27%;
+      top: 19.5%;
+
+      .gallery-modal__point-text {
+        top: -80px;
+        left: 80px;
+      }
+    }
+
+    &-eig-second {
+      left: 35%;
+      top: 53.5%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-eig-fifth {
+      left: 15.5%;
+      top: 44%;
+
+      .gallery-modal__point-text {
+        top: -110px;
+        left: 80px;
+      }
+    }
+
+    &-eig-third {
+      left: 68.5%;
+      top: 39.5%;
+
+      .gallery-modal__point-text {
+        top: -100px;
+        left: 60px;
+      }
+    }
+
+    &-eig-forth {
+      right: 45%;
+      top: 71%;
+
+      .gallery-modal__point-text {
+        top: -120px;
+        left: 60px;
+      }
+
+            @include respond-to($xl-LapTop) {
+              top: 60%;
+            }
+    }
+
+    @include respond-to($xl-tablet) {
+      &-f-forth,
+      &-f-first,
+      &-s-fifth,
+      &-s-third,
+      &-t-second,
+      &-t-fifth,
+      &-fo-third,
+      &-fo-forth,
+      &-fif-third,
+      &-fif-fifth,
+      &-six-third,
+      &-six-fifth,
+      &-six-sixth,
+      &-svn-second,
+      &-svn-forth,
+      &-eig-second,
+      &-eig-third {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+.popUp-mob-gallery {
+  &__modal {
+    display: none; 
+  }
+
+
+  &__modal.active {
+    display: block; 
+  }
+
+  &__text {
+    color: #000000;
+    margin-top: 20px;
+  }
+
+  &__title-wrapper {
+    margin-top: 90px;
+    position: relative;
+  }
+
+  &__content {
+    justify-content: start;
+
+    img {
+      width: 21px;
+      height: 21px;
+      margin-right: 20px;
+    }
+  }
+
+  &__title {
+    text-align: start;
+    padding-bottom: 25px;
+  }
+
+  &__title-wrapper::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: #000000;
+    position: absolute;
+    opacity: 0.3;
+  }
 }

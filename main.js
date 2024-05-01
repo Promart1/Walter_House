@@ -249,9 +249,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const container = document.querySelector('.scroll-container');
 
-// Додати обробник події для прокрутки
+
 container.addEventListener('scroll', function(event) {
-    // Ваш код для обробки події прокрутки
+   
     console.log('Прокрутка відбувається!');
 });
 
@@ -260,14 +260,24 @@ container.addEventListener('scroll', function(event) {
 
 /////////swiper
 
+
 const swiper = new Swiper(".swiper", {
   
   direction: "horizontal",
   loop: true,
 
   pagination: {
-        el: ".swiper-pagination",
-        type: "fraction",
+        el: ".swiper-custom-pagination",
+      type: "fraction",
+      clickable: true,
+      formatFractionCurrent: function (number) {
+            return '0' + number;
+      },
+      
+      formatFractionTotal: function (number) {
+            return '0' + number;
+        }
+      
       },
 
   
@@ -279,26 +289,60 @@ const swiper = new Swiper(".swiper", {
   
 });
 
+ 
+
+
+import gallery from './gallery.json';
+import Handlebars from 'handlebars';
+
+
+const data = gallery;
+
+
+const source = document.getElementById('galleryTemplate').innerHTML;
+const template = Handlebars.compile(source);
+
+
+const galleryElements = document.querySelectorAll('.gallery-modal__point-block');
+
+
+galleryElements.forEach(element => {
+    const html = template(data);
+    element.innerHTML = html;
+});
+
+
+
+// modal
 document.addEventListener('DOMContentLoaded', function() {
-    function formatNumberWithLeadingZero(num) {
-        return num < 10 ? `0${num}` : `${num}`;
+    const openModalButtons = document.querySelectorAll('.openModalButton');
+    const closeModalButton = document.getElementById('closeModalButton');
+    const modal = document.querySelector('.popUp-mob-gallery__modal');
+
+    if (closeModalButton && modal) {
+        
+        closeModalButton.addEventListener('click', function() {
+            modal.classList.remove('active'); 
+        });
     }
 
-    const paginationElement = document.getElementById('pagination');
-
-    if (paginationElement) {
-        const currentPageElement = paginationElement.querySelector('.swiper-pagination-current');
-        const totalPagesElement = paginationElement.querySelector('.swiper-pagination-total');
-
-        if (currentPageElement && totalPagesElement) {
-            let currentPage = parseInt(currentPageElement.textContent.trim());
-            let totalPages = parseInt(totalPagesElement.textContent.trim());
-
-            currentPageElement.textContent = formatNumberWithLeadingZero(currentPage);
-            totalPagesElement.textContent = formatNumberWithLeadingZero(totalPages);
-        }
+    
+    if (openModalButtons.length > 0 && modal) {
+        
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (window.innerWidth <= 630) {
+                    modal.classList.add('active'); 
+                }
+            });
+        });
     }
 });
+
+
+
+
+
 
 
 
