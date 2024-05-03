@@ -343,6 +343,119 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+/////////////////
+
+document.addEventListener('DOMContentLoaded', function() {
+    const styleItemElite = document.querySelector('.forth-screen__style-item-elite');
+    const styleItemVip = document.querySelector('.forth-screen__style-item-vip');
+    const styleItemExtra = document.querySelector('.forth-screen__style-item-extra');
+    const contactForm = document.querySelector('.forth-screen__contact-form');
+    const contactInfoElite = document.querySelector('.forth-screen__info-elite');
+    const contactInfoVip = document.querySelector('.forth-screen__info-vip');
+    const contactInfoExtra = document.querySelector('.forth-screen__info-extra');
+
+    
+        styleItemElite.addEventListener('mouseover', function() {
+            contactForm.style.opacity = 0;
+            contactInfoElite.style.opacity = 1;
+           
+        });
+
+        styleItemElite.addEventListener('mouseout', function() {
+            contactForm.style.opacity = 1;
+            contactInfoElite.style.opacity = 0;
+            
+        });
+    
+    
+    styleItemVip.addEventListener('mouseover', function() {
+            contactForm.style.opacity = 0;
+            contactInfoVip.style.opacity = 1;
+           
+        });
+
+        styleItemVip.addEventListener('mouseout', function() {
+            contactForm.style.opacity = 1;
+            contactInfoVip.style.opacity = 0;
+            
+        });
+    
+    
+    styleItemExtra.addEventListener('mouseover', function() {
+            contactForm.style.opacity = 0;
+            contactInfoExtra.style.opacity = 1;
+           
+        });
+
+        styleItemExtra.addEventListener('mouseout', function() {
+            contactForm.style.opacity = 1;
+            contactInfoExtra.style.opacity = 0;
+            
+        });
+    
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const styleItems = document.querySelectorAll('.forth-screen__style-item');
+
+    styleItems.forEach(item => {
+        item.addEventListener('click', function() {
+            
+            styleItems.forEach(element => {
+                element.classList.remove('active');
+            });
+
+            
+            item.classList.add('active');
+
+            
+            const text = item.querySelector('.forth-screen__style-text').textContent;
+
+            
+            showCircleForText(text);
+        });
+    });
+
+    function showCircleForText(text) {
+        const allCircles = document.querySelectorAll('.forth-screen__circle-wrapper');
+        const allNumber = document.querySelectorAll('.forth-screen__total-number');
+
+        
+        allCircles.forEach(circle => {
+            circle.style.display = 'none';
+        });
+
+        allNumber.forEach(number => {
+            number.style.opacity = '0';
+        });
+
+
+        
+        const targetCircle = document.querySelector(`.forth-screen__circle-wrapper-${text.toLowerCase()}`);
+        if (targetCircle) {
+            targetCircle.style.display = 'block';
+        }
+
+        const targetNumber = document.querySelector(`.forth-screen__total-number-${text.toLowerCase()}`);
+        if (targetNumber) {
+            targetNumber.style.opacity = '1';
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
