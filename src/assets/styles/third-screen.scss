@@ -234,7 +234,7 @@
 
         &__photo {
             width: 100%;
-            height: 20vh;
+            height: 30vh;
             transition: height 0.8s ease;
         }
 
@@ -245,7 +245,7 @@
         }
 
         &__photo:hover {
-            height: 45vh;
+            height: 55vh;
             width: 100%;
 
             .third-screen__title::after {
@@ -333,12 +333,12 @@
 
         &__photo {
             width: 100%;
-            height: 15vh;
+            height: 20vh;
             transition: height 0.8s ease;
         }
 
         &__photo:hover {
-            height: 35vh;
+            height: 40vh;
             width: 100%;
 
             .third-screen__full-image {
@@ -361,6 +361,8 @@
         background-color: $main-color;
         z-index: 6;
     }
+
+    
 
     &__content {
         margin: 5% auto;
@@ -1126,6 +1128,10 @@
                 top: -120px;
                 left: 80px;
             }
+
+                         @include respond-to($xl-LapTop) {
+                             right: 45%;
+                         }
         }
 
         &-t-third {

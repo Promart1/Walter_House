@@ -3,9 +3,9 @@
   width: 100%;
 
   &__inner {
-    top: 21%;
+    top: 26.5%;
     margin-right: 12.5%;
-    margin-left: 12.5%;
+    margin-left: 14.5%;
   }
 
   &__title {
@@ -16,12 +16,15 @@
     max-width: 456px;
     color: $main-color;
     text-transform: initial;
+    margin-left: 19%;
   }
 
   &__content-wrapper {
     display: flex;
     align-items: center;
-    margin-top: 50px;
+    // margin-top: 50px;
+    // opacity: 0;
+    //   animation: fadeIn 2s ease forwards;
   }
 
   &__circle-wrapper {
@@ -157,12 +160,14 @@
   &__style-item {
     width: 140px;
     text-align: center;
+    cursor: pointer;
   }
 
   &__style-text {
     font-size: 28px;
     line-height: 33px;
     text-transform: uppercase;
+    transition: opacity 0.3s ease;
   }
 
   &__style-point,
@@ -228,6 +233,13 @@
       background: $secondary-color;
     }
   }
+
+     .forth-screen__style-point,
+     .forth-screen__style-point-f,
+     .forth-screen__style-point::after,
+     .forth-screen__style-point-f::after {
+        transition: background 0.3s ease;
+     }
 
   &__style-item.active {
     .forth-screen__style-text {
@@ -331,12 +343,17 @@
     opacity: 0;
   }
 
-  &__contact-form,
+  .secondary__contact-form {
+    opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+  }
+
   &__info-elite,
   &__info-vip,
   &__info-extra {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+    z-index: 10;
   }
 
   &__info-elite,
@@ -348,6 +365,8 @@
   &__circle-wrapper-vip,
   &__circle-wrapper-extra {
     display: none;
+    opacity: 0;
+      animation: fadeIn 2s ease forwards;
   }
 
   @include respond-to($xl-LapTop) {
@@ -361,15 +380,32 @@
       left: -700px;
       top: 250px;
     }
+
+        &__info-title {
+          
+          font-size: 2vw;
+          padding-bottom: 2vh;
+          
+        }
+    
+        &__text {
+         
+          font-size: 1.2vw;
+         
+          margin-top: 2vh;
+        }
   }
 
   @include respond-to($l-desktop) {
-    .forth-screen__contact-form,
     .forth-screen__info-elite,
     .forth-screen__info-vip,
     .forth-screen__info-extra {
       display: none;
       z-index: 2;
+    }
+
+    &__contact-form {
+      display: none;
     }
 
     &__content-wrapper {
@@ -382,7 +418,15 @@
       margin-left: auto;
     }
 
+    &__total-number {
+      top: 85px;
+      justify-content: center;
+    }
+
     &__circle {
+      width: 180px;
+      height: 180px;
+      font-size: 40px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -416,18 +460,48 @@
   @include respond-to($xl-tablet) {
     height: 100%;
 
-    &__bg,
+    &__bg {
+      height: 720px;
+      object-fit: cover;
+      object-position: center;
+    }
+
     &__bg-overlay {
       height: 720px;
     }
 
+    &__content-wrapper {
+      padding-bottom: 162px;
+    }
+
+    &__total-number {
+      top: 85px;
+      justify-content: center;
+    }
+
+    &__circle {
+      width: 235px;
+      height: 235px;
+      font-size: 64px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__contact-form {
+      display: block;
+    }
+
     &__inner {
-      top: 0;
+      // top: 0;
       margin-left: 0;
       padding-bottom: 0;
       margin-top: 0;
-      padding-top: 50px;
+      padding-top: 60px;
       margin-right: 0;
+    }
+
+    &__circle-wrapper {
+      margin-top: 30px;
     }
 
     &__style-list {
@@ -514,7 +588,11 @@
 
     &__bg,
     &__bg-overlay {
-      height: 640px;
+      height: 670px;
+    }
+
+    &__content-wrapper {
+      padding-bottom: 155px;
     }
 
     &__style-list {

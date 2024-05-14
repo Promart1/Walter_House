@@ -49,6 +49,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const modals = document.querySelectorAll(".main-popUp");
     const modalButtons = document.querySelectorAll(".openModalBtn");
     const closeButtons = document.querySelectorAll(".close");
+    const orderModal = document.getElementById("orderCall");
+    const headerPhone = document.querySelector(".header__phone");
+
 
     modalButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -57,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             openModal(targetModal);
         });
     });
+
 
     closeButtons.forEach(closeButton => {
         closeButton.addEventListener("click", () => {
@@ -71,6 +75,9 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.classList.add("modal-open"); // Disable scrolling
         }
     }
+
+
+     
 
     function closeModal(modal) {
         if (modal) {
@@ -94,6 +101,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+
+
 
 
 
@@ -146,6 +157,98 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+const goBackButton = document.getElementById('goBackBtn');
+
+    // Додавання обробника подій для кнопки
+    goBackButton.addEventListener('click', function() {
+        // Виклик методу location.reload() для перезавантаження сторінки
+        location.reload();
+    });
+
+
+const validateInputsCallOrder = () => {
+    const inputs = document.querySelectorAll('.order-call__input');
+    let hasError = false;
+
+    inputs.forEach(function(input) {
+        const value = input.value.trim();
+        const validationTextDanger = input.nextElementSibling;
+
+        if (value === '') {
+            input.classList.add('first-screen__input-error');
+            if (validationTextDanger) {
+                validationTextDanger.style.display = 'block';
+            }
+            hasError = true;
+        } else {
+            input.classList.remove('first-screen__input-error');
+            if (validationTextDanger) {
+                validationTextDanger.style.display = 'none';
+            }
+        }
+    });
+
+    return hasError;
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    const submitBtn = document.querySelector('.first-screen__form-btn');
+
+    if (submitBtn && form) {
+        submitBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            const hasInputError = validateInputsCallOrder();
+
+            if (!hasInputError) {
+                form.submit(); 
+            }
+        });
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            location.reload(); 
+        });
+    }
+});
+
+
+
+////////sale
+
+
+ 
+
+
+function showPopup() {
+    let timerId; 
+    document.getElementById('popupWindow').style.display = 'block';
+    
+    timerId = setTimeout(hidePopup, 20000); 
+
+
+    function hidePopup() {
+        document.getElementById('popupWindow').style.display = 'none';
+       
+        timerId = setTimeout(showPopup, 10000); 
+    }
+
+    
+    function checkScreenWidth() {
+        if (window.innerWidth >= 920) {
+            
+            clearTimeout(timerId);
+        }
+    }
+
+    // Додаємо обробник події для визову функції перевірки ширини екрана при зміні розміру вікна
+    window.addEventListener('resize', checkScreenWidth);
+}
+
+// Додаємо обробник події для визову функції showPopup при завантаженні сторінки
+window.addEventListener('load', showPopup);
 
 
 /////////services list
@@ -339,6 +442,82 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+/////////// sixth-screen modal
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const openModalButtons = document.querySelectorAll('.openModalBtnSix');
+//     const closeModalButton = document.getElementById('closeModalButtonSix');
+//     const modal = document.querySelector('.popUp-tab-sixth-screen__modal');
+
+//     if (closeModalButton && modal) {
+        
+//         closeModalButton.addEventListener('click', function() {
+//             modal.classList.remove('active');
+//         });
+//     }
+
+    
+//     if (openModalButtons.length > 0 && modal) {
+        
+//         openModalButtons.forEach(button => {
+//             button.addEventListener('click', function() {
+//                 if (window.innerWidth <= 920) {
+//                     modal.classList.add('active');
+//                 }
+//             });
+//         });
+//     }
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+        const openModalButtons = document.querySelectorAll('.openModalBtnSix');
+        const modals = document.querySelectorAll('.popUp-tab-sixth-screen__modal');
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const modalId = button.getAttribute('data-modal-target');
+                const modal = document.getElementById(modalId);
+
+                if (modal) {
+                    modal.classList.add('active');
+                }
+            });
+        });
+
+        modals.forEach(modal => {
+            const closeModalButton = modal.querySelector('.e-service__close');
+
+            if (closeModalButton) {
+                closeModalButton.addEventListener('click', function() {
+                    modal.classList.remove('active');
+                });
+            }
+        });
+});
+    
+
+document.addEventListener('DOMContentLoaded', function() {
+        const showMoreButton = document.getElementById('showMoreButton');
+    const hiddenItems = document.querySelectorAll('.sixth-screen__item');
+    const contactForm = document.querySelector('.sixth-screen__contact-form-s');
+const list = document.querySelector('.sixth-screen__list');
+        if (showMoreButton) {
+            showMoreButton.addEventListener('click', function() {
+                
+                if (hiddenItems.length > 0) {
+                   
+                    hiddenItems.forEach(item => {
+                        item.style.display = 'block';
+                        contactForm.style.bottom = '0';
+                        list.style.marginBottom = '0';
+                    });
+
+                    
+                    showMoreButton.style.display = 'none';
+                }
+            });
+        }
+    });
 
 
 
@@ -426,6 +605,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         allCircles.forEach(circle => {
             circle.style.display = 'none';
+    //          circle.style.opacity = '0';
+    // setTimeout(() => {
+    //     circle.style.visibility = 'hidden';
+    // }, 300);
         });
 
         allNumber.forEach(number => {
@@ -437,6 +620,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetCircle = document.querySelector(`.forth-screen__circle-wrapper-${text.toLowerCase()}`);
         if (targetCircle) {
             targetCircle.style.display = 'block';
+    //           circle.style.opacity = '1';
+    // circle.style.visibility = 'visible';
         }
 
         const targetNumber = document.querySelector(`.forth-screen__total-number-${text.toLowerCase()}`);
@@ -447,10 +632,110 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// document.addEventListener('DOMContentLoaded', function() {
+//     const mainPoints = document.querySelectorAll('.fifth-screen__main-point');
+
+//     mainPoints.forEach(mainPoint => {
+//         mainPoint.addEventListener('click', function() {
+//             const circleWrapper = mainPoint.parentElement.parentElement; // Отримати батьківський circle-wrapper
+//             const circleNumber = circleWrapper.getAttribute('number');
+//             const allCircles = document.querySelectorAll('.fifth-screen__circle-wrapper');
+
+//             // Приховати всі кола
+//             allCircles.forEach(circle => {
+//                 circle.style.display = "none";
+//             });
+
+//             // Показати вибране коло за допомогою data-number
+//             const selectedCircle = document.querySelector(`.fifth-screen__circle-wrapper-${circleNumber}`);
+//             if (selectedCircle) {
+//                 selectedCircle.style.display = "block";
+//             }
+//         });
+//     });
+// });
+
+
+const items = document.querySelectorAll('.sixth-screen__item');
+
+
+const infoBlocks = document.querySelectorAll('.sixth-screen__info');
+const contactForm = document.querySelectorAll('.sixth-screen__contact-form');
+
+
+
+items.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+        
+        infoBlocks[index].style.display = 'block';
+        
+    });
+
+    item.addEventListener('mouseleave', () => {
+       
+        infoBlocks[index].style.display = 'none';
+        
+    });
+});
 
 
 
 
+
+
+///////////fifth-screen
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Отримання всіх кнопок і кругів
+//     const buttons = document.querySelectorAll('.fifth-screen__main-point');
+//     const circles = document.querySelectorAll('.fifth-screen__circle-wrapper');
+//     console.log(circles);
+    
+//     let selectedCircle = null;
+//     // Додавання обробника подій для кожної кнопки
+//     buttons.forEach((button, index) => {
+//         button.addEventListener('click', () => {
+//             // Приховання всіх кругів
+//             circles.forEach(circle => {
+//                 circle[index].style.display = 'block';
+                
+//             });
+
+            
+
+//             // Показ потрібного круга, використовуючи індекс кнопки (плюс 1, оскільки індекси починаються з 0)
+//             circles.style.display = 'none';
+
+//             // selectedCircle = circles[index];
+//         });
+//     });
+// });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.fifth-screen__main-point');
+    const circles = document.querySelectorAll('.fifth-screen__circle');
+
+   
+    circles[0].closest('.fifth-screen__circle-wrapper').style.display = 'block';
+
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const number = button.classList[1].replace('fifth-screen__main-point-', ''); // Отримуємо номер круга з класу кнопки
+            const targetCircle = document.querySelector(`[number="${number}"]`); // Знаходимо круг за номером кнопки
+
+            if (targetCircle) {
+               
+                circles.forEach(circle => {
+                    circle.closest('.fifth-screen__circle-wrapper').style.display = 'none';
+                });
+
+                
+                targetCircle.closest('.fifth-screen__circle-wrapper').style.display = 'block';
+            }
+        });
+    });
+});
 
 
 
@@ -554,6 +839,88 @@ document.addEventListener('DOMContentLoaded', function() {
 //         }
 //     });
 // });
+
+
+
+// new fullpage('#fullpage', {
+//         // Опції fullpage.js
+//         autoScrolling: true, // Автоматична прокрутка
+//         navigation: true, // Показувати навігацію (точки)
+//         anchors: ['section1', 'section2', 'section3', 'section4', 'section5', 'section6'], // Які ідентифікатори призначені секціям
+//         responsiveWidth: 768 // Перехід до повноекранного режиму при ширині менше 768px
+// });
+    
+
+
+// new fullpage('#fullpage', {
+    
+//     licenseKey: 'gplv3-license',
+//         autoScrolling: true,
+//         navigation: true,
+//         navigationPosition: 'right',
+//        anchors: ['section1', 'section2', 'section3', 'section4', 'section5', 'section6'],
+//         responsiveWidth: 920
+//     });
+
+
+ $(document).ready(function() {
+    $.scrollify({
+        section: ".section",  // CSS-селектор секцій, які будуть прокручуватись
+        scrollSpeed: 800,
+       // Швидкість прокрутки (в мілісекундах)
+        easing: "easeOutExpo",       // Анімаційна функція прокрутки
+        setHeights: false,           // Автоматично встановити висоту секцій
+        overflowScroll: true,        // Прокрутка за межами секцій
+        updateHash: false,           // Оновлювати хеш URL під час прокрутки
+        touchScroll: true,           // Дозволити прокрутку на сенсорних пристроях
+        before: function(index, sections) {
+            // Функція, яка викликається перед переходом до нової секції
+        },
+        after: function(index, sections) {
+            // Функція, яка викликається після переходу до нової секції
+        },
+         pagination: {
+        el: ".pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<a href="#" class="point ' + className + '"></a>'; // Додаємо клас point
+        },
+    },
+    afterRender: function () {
+        $(".pagination .point").eq(0).addClass("point-active"); // Додаємо клас active до першої крапочки
+    },
+    after: function (index) {
+        $(".pagination .point").removeClass("point-active"); // Видаляємо клас active у всіх крапочок
+        $(".pagination .point").eq(index).addClass("point-active"); // Додаємо клас active до поточної крапочки
+    },
+    });
+ });
+
+ $(document).ready(function() {
+    // Перевіряємо розмір екрану при завантаженні сторінки
+    checkWindowSize();
+
+    // Перевіряємо розмір екрану при зміні розміру вікна
+    $(window).resize(function() {
+        checkWindowSize();
+    });
+});
+
+function checkWindowSize() {
+    // Отримуємо ширину вікна
+    var windowWidth = $(window).width();
+
+    // Якщо ширина екрану менше або дорівнює 768px (ширина планшетного екрану),
+    // або вище (відключаємо Scrollify для мобільних пристроїв), то відключаємо Scrollify
+    if (windowWidth <= 920) {
+        $.scrollify.disable(); // Відключаємо Scrollify
+    } else {
+        $.scrollify.enable(); // Увімкнемо Scrollify, якщо розмір екрану дозволяє
+    }
+}
+
+
+
 
 
 

@@ -24,7 +24,7 @@
     &__inner {
         position: relative;
         z-index: 3;
-        top: 33%;
+        top: 34%;
         margin-left: 16.5%;
         margin-right: auto;
         // height: 100vw;
@@ -89,58 +89,14 @@
     //   border-radius: 50%;
     // }
 
-    &__point {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-bottom: 7px;
-        position: relative;
-        cursor: pointer;
-    }
-
-    &__point::after {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: $main-color;
-        opacity: 0.3;
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    &__point-active {
-        //  background: $secondary-color;
-        position: relative;
-        opacity: 1;
-    }
-
-    &__point-active::after {
-        background: $secondary-color;
-
-        opacity: 1;
-    }
-
-    &__point-active::before {
-        content: "";
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        border: 1px solid $main-color;
-        opacity: 0.3;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-    }
+    
 
     &__contact-form {
         position: absolute;
         z-index: 5;
-        bottom: -1px;
+   
         right: 0;
+        bottom: 0;
         width: 60vw;
         max-width: 740px;
         padding: 81px 120px 90px 120px;
@@ -209,7 +165,7 @@
         &__contact-form {
             padding: 2vw 3vw;
             width: 45vw;
-            height: 18vw;
+            height: 16vw;
         }
 
         &__input {
@@ -219,9 +175,7 @@
             font-size: 1.4vw;
         }
 
-        &__inner {
-            top: 30%;
-        }
+        
 
         &__form-btn {
             font-size: 1.2vw;
@@ -231,12 +185,20 @@
             top: 25%;
             right: 60px;
         }
+
+                 &__form-btn {
+                    margin-top: 10px;
+                 }
     }
 
     @include respond-to($xl-tablet) {
         height: auto;
 
         &__point-wrapper {
+            display: none;
+        }
+
+        #popupWindow {
             display: none;
         }
 
@@ -256,7 +218,9 @@
 
         &__inner {
             margin-left: 5%;
-            margin-top: 21%;
+            margin-top: 31%;
+            top: 0;
+          
             padding-bottom: 140px;
             display: block;
         }
@@ -268,11 +232,15 @@
         &__contact-form {
             width: 100%;
             position: static;
+            // position: absolute;
+                // bottom: 0;
             max-width: 100%;
             padding: 85px 120px 89px 120px;
 
             height: auto;
         }
+
+        
 
         &__input {
             font-size: 18px;
@@ -284,13 +252,15 @@
         &__form-btn {
             font-size: 20px;
             align-items: center;
+            margin-top: 30px;
         }
     }
 
     @include respond-to($m-tablet) {
         &__inner {
             margin-left: 2%;
-            margin-top: 15%;
+            margin-top: 33%;
+padding-bottom: 50px;
         }
 
         &__title {
@@ -338,9 +308,17 @@
 
     @include respond-to($s-tablet) {
         &__inner {
-            padding-bottom: 120px;
+            margin-top: 40%;
+            padding-bottom: 60px;
         }
     }
+
+        @include respond-to($m-mobile) {
+            &__inner {
+                margin-top: 35%;
+                padding-bottom: 100px;
+            }
+        }
 
     @include respond-to($s-mobile) {
         &__title {
@@ -349,7 +327,7 @@
 
         &__inner {
             margin-left: 2%;
-            margin-top: 37%;
+            margin-top: 57%;
             padding-bottom: 180px;
         }
 
@@ -363,4 +341,62 @@
             padding: 14px 10px 12px 0;
         }
     }
+}
+
+
+.sale {
+    color: #000000;
+    &__title {
+        font-size: 2vw;
+        font-weight: 300;
+        letter-spacing: 4px;
+
+
+        span {
+            font-size: 3vw;
+            font-family: "Bruno Ace", sans-serif;
+        }
+    }
+
+    &__text {
+        font-size: 1vw;
+        margin-top: 2vh;
+        position: relative;
+        padding-bottom: 2.5vh;
+    }
+
+    &__text::after {
+        content: "";
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.15);
+    }
+
+    // &__btn-wrapper {
+    //     margin-top: 2vh;
+    // }
+
+        @include respond-to($xl-tablet) {
+            &__title {
+                    font-size: 3vw;
+                    font-weight: 300;
+                    letter-spacing: 4px;
+            
+            
+                    span {
+                        font-size: 3vw;
+                        font-family: "Bruno Ace", sans-serif;
+                    }
+                }
+            
+                &__text {
+                    font-size: 2vw;
+                    margin-top: 3vh;
+                    position: relative;
+                    padding-bottom: 2.5vh;
+                }
+        }
 }

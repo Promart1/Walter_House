@@ -17,6 +17,9 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
     />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WALTER-HOUSE</title>
   </head>
@@ -51,8 +54,9 @@
             </li>
 
             <li class="header__item">
-              <p class="header__request">request for a call</p>
-              <div class="header__phone">
+              <p class="header__request openModalBtn" data-modal-target="orderCall"
+               >request for a call</p>
+              <div class="header__phone openModalBtn" data-modal-target="orderCall">
                 <div class="header__phone-wrapper">
                   <img src="./src/assets/img/icons/phone.svg" alt="phone" />
                 </div>
@@ -181,6 +185,65 @@
           </div>
         </div>
       </div>
+
+<!-- ///////////////////order call popUp/////////////////////// -->
+      <div id="orderCall" class="header-modal main-popUp ">
+        <div class="header-modal__content order-call__content">
+          
+          <form class="contact-form order-call__contact-form">
+                <div class="first-screen__input-wrapper order-call__input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    id="app-name"
+                    class=" order-call__input"
+                    placeholder="Your name"
+                  />
+
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+
+                <div class="first-screen__input-wrapper order-call__input-wrapper">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="app-phone"
+                    class="order-call__input"
+                    placeholder="Your phone number"
+                  />
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+                <div class="first-screen-form__btn-wrapper">
+                  <button class="first-screen__form-btn openModalBtn" data-modal-target="thanksPage">
+                    discuss a project
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </form>
+        </div>
+      </div>
+
+
+      <!-- ///////////////////thanks page popUp/////////////////////// -->
+      <div id="thanksPage" class="header-modal main-popUp ">
+        <div class="header-modal__content order-call__content thanks-page__content">
+          
+          <h2 class="thanks-page__title">Thank you for your application!</h2>
+          <p class="thanks-page__text">Our manager will contact you shortly.</p>
+          <div class="first-screen-form__btn-wrapper">
+                  <button type="submit" class="first-screen__form-btn" id="goBackBtn">
+                   go back
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+        </div>
+      </div>
+
+
     </header>
     <main>
       <!-- ////////////////////LEFT PANEL//////////////////////// -->
@@ -231,8 +294,68 @@
         </div>
       </div>
 
-      <div class="scroll-container">
-        <div class="slider">
+
+ <!-- <div
+              class="first-screen__contact-form sale "
+              id="popup"
+            >
+              <div>
+                <h2 class="sale__title content"><span>50%</span> discount</h2>
+                <p class="sale__text">
+                  During quarantine there is a 50% discount on all service packages.Quality guarantee up to 5 years!
+                </p>
+
+                <div class="first-screen-form__btn-wrapper sale__btn-wrapper">
+                  <button type="submit" class="first-screen__form-btn openModalBtn" data-modal-target="orderCall">
+                    Request a call
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+
+       <div class="first-screen__contact-form" id="popupWindow">
+              <form class="contact-form">
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    id="app-name"
+                    class="first-screen__input"
+                    placeholder="Your name"
+                  />
+
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="app-phone"
+                    class="first-screen__input"
+                    placeholder="Your phone number"
+                  />
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+                <div class="first-screen-form__btn-wrapper">
+                  <button type="submit" class="first-screen__form-btn openModalBtn" data-modal-target="thanksPage">
+                    discuss a project
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </form>
+            </div> -->
+
+      <!-- <div id="fullpage"> -->
+
+        
+        <!-- <div class="slider"> -->
           <!-- ////////////////////FIRST SCREEN//////////////////////// -->
 
           <section id="screenShot1" class="first-screen section">
@@ -267,16 +390,29 @@
               </div>
             </div>
 
-            <div class="first-screen__point-wrapper">
-              <div class="first-screen__point first-screen__point-active"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
-              <div class="first-screen__point"></div>
+           
+
+ <div
+              class="first-screen__contact-form sale "
+            
+            >
+              <div>
+                <h2 class="sale__title content"><span>50%</span> discount</h2>
+                <p class="sale__text">
+                  During quarantine there is a 50% discount on all service packages.Quality guarantee up to 5 years!
+                </p>
+
+                <div class="first-screen-form__btn-wrapper sale__btn-wrapper">
+                  <button type="submit" class="first-screen__form-btn openModalBtn" data-modal-target="orderCall">
+                    Request a call
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div class="first-screen__contact-form">
+
+            <div class="first-screen__contact-form first-screen__contact-form-tab" id="popupWindow">
               <form class="contact-form">
                 <div class="first-screen__input-wrapper">
                   <input
@@ -305,7 +441,7 @@
                   </div>
                 </div>
                 <div class="first-screen-form__btn-wrapper">
-                  <button type="submit" class="first-screen__form-btn">
+                  <button type="submit" class="first-screen__form-btn openModalBtn" data-modal-target="thanksPage">
                     discuss a project
                     <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
                   </button>
@@ -397,13 +533,15 @@
                   </div>
                 </div>
                 <div class="first-screen-form__btn-wrapper">
-                  <button type="submit" class="first-screen__form-btn">
+                  <button type="submit" class="first-screen__form-btn openModalBtn" data-modal-target="thanksPage">
                     discuss a project
                     <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
                   </button>
                 </div>
               </form>
             </div>
+
+             
 
             <!-- ////////////////////ABOUT US POPUP////////////////////////  -->
 
@@ -2393,6 +2531,7 @@
                 media="(min-width: 200px)"
                 srcset="./src/assets/img/forth-screen-bg-mob.jpg"
               />
+              
               <img
                 src="./src/assets/img/forth-screen-bg.jpg"
                 class="first-screen__bg forth-screen__bg"
@@ -2426,10 +2565,8 @@
                     class="forth-screen__circle forth-screen__circle-vip"
                     data-number="120"
                   >
-                <div class="forth-screen__point"></div>
-                </div>
-
-                  
+                    <div class="forth-screen__point"></div>
+                  </div>
                 </div>
 
                 <div
@@ -2440,8 +2577,8 @@
                     class="forth-screen__circle forth-screen__circle-extra"
                     data-number="340"
                   >
-                <div class="forth-screen__point"></div>
-                </div>
+                    <div class="forth-screen__point"></div>
+                  </div>
                 </div>
 
                 <ul class="forth-screen__style-list">
@@ -2557,7 +2694,7 @@
                   </div>
                 </div>
                 <div class="first-screen-form__btn-wrapper">
-                  <button type="submit" class="first-screen__form-btn">
+                  <button type="submit" class="first-screen__form-btn openModalBtn" data-modal-target="thanksPage">
                     discuss a project
                     <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
                   </button>
@@ -2609,13 +2746,891 @@
                 </p>
               </div>
             </div>
+
+
+           <!-- ///////////////////////services list pop up///////////////// -->
+
+            <!-- <div
+              id="eliteServicesInfo"
+              class="header-modal main-popUp e-service__modal e-service__modal-forth"
+            >
+              <div class="header-modal__content e-service__content">
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="close e-service__close"
+                />
+
+                <div class="e-service__title-wrapper">
+                  <h2 class="third-screen__title content e-service__title">
+                    Elite
+                  </h2>
+                </div>
+                <h3 class="e-service__subtitle content">from 3000 UAH</h3>
+                <ul
+                  id="service-list"
+                  class="e-service__list scroll-container custom-scrollbar"
+                ></ul>
+              </div>
+            </div>
+
+            <div
+              id="vipServicesInfo"
+              class="header-modal main-popUp e-service__modal"
+            >
+              <div class="header-modal__content e-service__content">
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="close e-service__close"
+                />
+
+                <div class="e-service__title-wrapper">
+                  <h2 class="third-screen__title content e-service__title">
+                    Vip
+                  </h2>
+                </div>
+                <h3 class="e-service__subtitle content">from 5000 UAH</h3>
+                <ul id="vip-service-list" class="e-service__list"></ul>
+              </div>
+            </div>
+
+            <div
+              id="extraServicesInfo"
+              class="header-modal main-popUp e-service__modal"
+            >
+              <div class="header-modal__content e-service__content">
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="close e-service__close"
+                />
+
+                <div class="e-service__title-wrapper">
+                  <h2 class="third-screen__title content e-service__title">
+                    Extra
+                  </h2>
+                </div>
+                <h3 class="e-service__subtitle content">from 8000 UAH</h3>
+                <ul id="extra-service-list" class="e-service__list"></ul>
+              </div>
+            </div>  -->
           </section>
-        </div>
+
+          <!-- /////////////////////FIFTH SCREEN /////////////////////////// -->
+
+          <section id="screenShot5" class="second-screen forth-screen section">
+            <picture>
+              <source
+                media="(min-width: 920px)"
+                srcset="./src/assets/img/third-screen-first.jpg"
+              />
+              <source
+                media="(min-width: 425px)"
+                srcset="./src/assets/img/third-screen-first-tab.jpg"
+              />
+              <source
+                media="(min-width: 200px)"
+                srcset="./src/assets/img/third-screen-first-mob.jpg"
+              />
+              <img
+                src="./src/assets/img/third-screen-first.jpg"
+                class="first-screen__bg forth-screen__bg"
+                alt="bg"
+              />
+            </picture>
+            <div
+              class="first-screen__bg-overlay forth-screen__bg-overlay"
+            ></div>
+
+            <div class="first-screen__inner fifth-screen__inner">
+              <h2 class="forth-screen__title fifth-screen__title header-font">
+                6 steps to your WALTER house:
+              </h2>
+
+              <div class="fifth-screen__content-wrapper">
+        
+                <div
+                  class="fifth-screen__circle-wrapper fifth-screen__circle-wrapper-first"
+                >
+
+                <div class="fifth-screen__wrapper">
+                  <div class="fifth-screen__circle-active fifth-screen__circle-active-first">
+                  <div
+                    class="fifth-screen__circle"
+                    data-number="1"
+                    number="first"
+                  >
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-first fifth-screen__main-point-active"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-second"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-third"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-forth"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-fifth"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-sixth"
+                    ></button>
+                    
+                  </div>
+                  </div>
+
+                  <div class="fifth-screen__info-wrapper">
+                <img src="./src/assets/img/icons/icon1.svg" alt="icon" class="fifth-screen__info-icon">
+                <p class="fifth-screen__info-title">LEAVE AN APPLICATION</p>
+                <img src="./src/assets/img/icons/arrow-right.svg" alt="arrow" class="fifth-screen__info-arrow">
+                <p class="fifth-screen__info-text">LEAVE AN APPLICATION BY PHONE OR ON OUR WEBSITE</p>
+                </div>
+                </div>
+                </div>
+
+
+                <div
+                  class="fifth-screen__circle-wrapper fifth-screen__circle-wrapper-second"
+                >
+
+                <div class="fifth-screen__wrapper">
+                  <div class="fifth-screen__circle-active">
+                  <div class="fifth-screen__circle" data-number="2" number="second">
+                     <button
+                      class="fifth-screen__main-point fifth-screen__main-point-first fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-second fifth-screen__main-point-active"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-third"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-forth"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-fifth"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-sixth"
+                    ></button>
+                    
+                  </div>
+                  </div>
+
+                  <div class="fifth-screen__info-wrapper">
+                <img src="./src/assets/img/icons/icon2.svg" alt="icon" class="fifth-screen__info-icon">
+                <p class="fifth-screen__info-title">CHECK OUT OF THE MEASURER</p>
+                <img src="./src/assets/img/icons/arrow-right.svg" alt="arrow" class="fifth-screen__info-arrow">
+                <p class="fifth-screen__info-text">OUR SPECIALIST COMES TO YOU AT THE OBJECT FOR MEASURING AND PHOTO FIXING</p>
+                </div>
+                </div>
+                </div>
+
+
+
+                <div
+                  class="fifth-screen__circle-wrapper fifth-screen__circle-wrapper-third"
+                >
+
+                <div class="fifth-screen__wrapper">
+                  <div class="fifth-screen__circle-active">
+                  <div class="fifth-screen__circle" data-number="3" number="third">
+                     <button
+                      class="fifth-screen__main-point fifth-screen__main-point-first fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-second fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-third fifth-screen__main-point-active"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-forth"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-fifth"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-sixth"
+                    ></button>
+                    
+                  </div>
+                  </div>
+
+                  <div class="fifth-screen__info-wrapper">
+                <img src="./src/assets/img/icons/icon3.svg" alt="icon" class="fifth-screen__info-icon">
+                <p class="fifth-screen__info-title">DRAFTING AN ESTIMATE</p>
+                <img src="./src/assets/img/icons/arrow-right.svg" alt="arrow" class="fifth-screen__info-arrow">
+                <p class="fifth-screen__info-text">DEVELOPMENT OF TERMS OF REFERENCE, 3D VISUALIZATION AND CALCULATION OF THE ESTIMATE</p>
+                </div>
+                </div>
+                </div>
+
+
+                <div
+                  class="fifth-screen__circle-wrapper fifth-screen__circle-wrapper-forth"
+                >
+
+                <div class="fifth-screen__wrapper">
+                  <div class="fifth-screen__circle-active">
+                  <div class="fifth-screen__circle" data-number="4" number="forth">
+                     <button
+                      class="fifth-screen__main-point fifth-screen__main-point-first fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-second fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-third fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-forth fifth-screen__main-point-active"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-fifth"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-sixth"
+                    ></button>
+                    
+                  </div>
+                  </div>
+
+                  <div class="fifth-screen__info-wrapper">
+                <img src="./src/assets/img/icons/icon4.svg" alt="icon" class="fifth-screen__info-icon">
+                <p class="fifth-screen__info-title">SIGNING THE CONTRACT</p>
+                <img src="./src/assets/img/icons/arrow-right.svg" alt="arrow" class="fifth-screen__info-arrow">
+                <p class="fifth-screen__info-text">AGREEMENT OF THE COST AND DATE OF COMPLETION OF WORKS, SIGNING OF THE CONTRACT</p>
+                </div>
+                </div>
+                </div>
+                
+
+                <div
+                  class="fifth-screen__circle-wrapper fifth-screen__circle-wrapper-fifth"
+                >
+
+                <div class="fifth-screen__wrapper">
+                  <div class="fifth-screen__circle-active">
+                  <div class="fifth-screen__circle" data-number="5" number="fifth">
+                     <button
+                      class="fifth-screen__main-point fifth-screen__main-point-first fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-second fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-third fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-forth fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-fifth fifth-screen__main-point-active"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-sixth"
+                    ></button>
+                    
+                  </div>
+                  </div>
+
+                  <div class="fifth-screen__info-wrapper">
+                <img src="./src/assets/img/icons/icon5.svg" alt="icon" class="fifth-screen__info-icon">
+                <p class="fifth-screen__info-title">BEGINNING OF WORK</p>
+                <img src="./src/assets/img/icons/arrow-right.svg" alt="arrow" class="fifth-screen__info-arrow">
+                <p class="fifth-screen__info-text">START OF REPAIR WORKS UNDER THE SUPERVISION OF A PERSONAL SUPERVISOR</p>
+                </div>
+                </div>
+                </div>
+
+
+                <div
+                  class="fifth-screen__circle-wrapper fifth-screen__circle-wrapper-sixth fifth-screen__circle-wrapper6"
+                >
+
+                <div class="fifth-screen__wrapper">
+                  <div class="fifth-screen__circle-active">
+                  <div class="fifth-screen__circle" data-number="6" number="sixth">
+                     <button
+                      class="fifth-screen__main-point fifth-screen__main-point-first fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-second fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-third fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-forth fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-fifth fifth-screen__main-point-include"
+                    ></button>
+                    <button
+                      class="fifth-screen__main-point fifth-screen__main-point-sixth fifth-screen__main-point-active"
+                    ></button>
+                    
+                  </div>
+                  </div>
+
+                  <div class="fifth-screen__info-wrapper">
+                <img src="./src/assets/img/icons/icon6.svg" alt="icon" class="fifth-screen__info-icon">
+                <p class="fifth-screen__info-title">COMPLETION</p>
+                <img src="./src/assets/img/icons/arrow-right.svg" alt="arrow" class="fifth-screen__info-arrow">
+                <p class="fifth-screen__info-text">COMPLETION OF REPAIRS, REMOVAL OF CONSTRUCTION rubbish</p>
+                </div>
+                </div>
+                </div>
+
+                
+              </div>
+
+            </div>
+
+              
+
+            <div
+              class="first-screen__contact-form forth-screen__contact-form fifth-screen__contact-form"
+            >
+              <form class="contact-form">
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    id="app-name"
+                    class="first-screen__input"
+                    placeholder="Your name"
+                  />
+
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="app-phone"
+                    class="first-screen__input"
+                    placeholder="Your phone number"
+                  />
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+                <div class="first-screen-form__btn-wrapper">
+                  <button type="submit" class="first-screen__form-btn openModalBtn" data-modal-target="thanksPage">
+                    discuss a project
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+
+          <!-- /////////////////////SIXTH SCREEN /////////////////////////// -->
+
+          <section id="screenShot6" class="second-screen forth-screen section">
+            <picture>
+              <source
+                media="(min-width: 920px)"
+                srcset="./src/assets/img/third-screen-first.jpg"
+              />
+              <source
+                media="(min-width: 425px)"
+                srcset="./src/assets/img/third-screen-first-tab.jpg"
+              />
+              <source
+                media="(min-width: 200px)"
+                srcset="./src/assets/img/third-screen-first-mob.jpg"
+              />
+              <img
+                src="./src/assets/img/third-screen-first.jpg"
+                class="first-screen__bg forth-screen__bg sixth-screen__main-bg"
+                alt="bg"
+              />
+            </picture>
+            <div
+              class="first-screen__bg-overlay sixth-screen__bg-overlay"
+            ></div>
+
+            <div class="first-screen__inner sixth-screen__inner">
+             <ul class="sixth-screen__list">
+              <li class="sixth-screen__item sixth-screen__item-first openModalBtnSix"
+                      data-modal-target="firstCard">
+                <div class="sixth-screen__bg-wrapper">
+                <picture>
+              <source
+                media="(min-width: 920px)"
+                srcset="./src/assets/img/sixth-screen-first.jpg"
+              />
+              <source
+                media="(min-width: 559px)"
+                srcset="./src/assets/img/sixth-screen-first-tab.jpg"
+              />
+              <source
+                media="(min-width: 200px)"
+                srcset="./src/assets/img/sixth-screen-first-mob.jpg"
+              />
+              <img
+                src="./src/assets/img/sixth-screen-first.jpg"
+                class="sixth-screen__bg"
+                alt="bg"
+              />
+            </picture>
+</div>
+            <p class="sixth-screen__text">Online broadcast of repair</p>
+              </li>
+
+              <li class="sixth-screen__item sixth-screen__item-second openModalBtnSix"
+                      data-modal-target="secondCard">
+                <picture>
+              <source
+                media="(min-width: 920px)"
+                srcset="./src/assets/img/sixth-screen-second.jpg"
+              />
+              <source
+                media="(min-width: 559px)"
+                srcset="./src/assets/img/sixth-screen-second-tab.jpg"
+              />
+              <source
+                media="(min-width: 200px)"
+                srcset="./src/assets/img/sixth-screen-second-mob.jpg"
+              />
+              <img
+                src="./src/assets/img/sixth-screen-second.jpg"
+                class="sixth-screen__bg"
+                alt="bg"
+              />
+            </picture>
+
+            <p class="sixth-screen__text">Video-surveillance and alarm</p>
+              </li>
+
+              <li class="sixth-screen__item sixth-screen__item-third openModalBtnSix"
+                      data-modal-target="thirdCard">
+                <picture>
+              <source
+                media="(min-width: 920px)"
+                srcset="./src/assets/img/sixth-screen-third.jpg"
+              />
+              <source
+                media="(min-width: 559px)"
+                srcset="./src/assets/img/sixth-screen-third-tab.jpg"
+              />
+              <source
+                media="(min-width: 200px)"
+                srcset="./src/assets/img/sixth-screen-first-mob.jpg"
+              />
+              <img
+                src="./src/assets/img/sixth-screen-third.jpg"
+                class="sixth-screen__bg"
+                alt="bg"
+              />
+            </picture>
+
+            <div class="show-more-btn sixth-screen__show-more-btn">
+        <button id="showMoreButton">more services
+          <img src="./src/assets/img/icons/arrow-down.svg" alt="arrow">
+        </button>
       </div>
+
+            <p class="sixth-screen__text">Selection of furniture</p>
+              </li>
+
+              <li class="sixth-screen__item sixth-screen__item-forth openModalBtnSix"
+                      data-modal-target="forthCard">
+                <picture>
+              <source
+                media="(min-width: 920px)"
+                srcset="./src/assets/img/sixth-screen-forth.jpg"
+              />
+              <source
+                media="(min-width: 559px)"
+                srcset="./src/assets/img/sixth-screen-forth-tab.jpg"
+              />
+              <source
+                media="(min-width: 200px)"
+                srcset="./src/assets/img/sixth-screen-second-mob.jpg"
+              />
+              <img
+                src="./src/assets/img/sixth-screen-forth.jpg"
+                class="sixth-screen__bg"
+                alt="bg"
+              />
+            </picture>
+
+            <p class="sixth-screen__text">Household appliances</p>
+              </li>
+
+              <li class="sixth-screen__item sixth-screen__item-fifth openModalBtnSix"
+                      data-modal-target="fifthCard">
+                <picture>
+              <source
+                media="(min-width: 920px)"
+                srcset="./src/assets/img/sixth-screen-fifth.jpg"
+              />
+              <source
+                media="(min-width: 559px)"
+                srcset="./src/assets/img/sixth-screen-fifth-tab.jpg"
+              />
+              <source
+                media="(min-width: 200px)"
+                srcset="./src/assets/img/sixth-screen-first-mob.jpg"
+              />
+              <img
+                src="./src/assets/img/sixth-screen-fifth.jpg"
+                class="sixth-screen__bg"
+                alt="bg"
+              />
+            </picture>
+
+            <p class="sixth-screen__text">Ultra service</p>
+              </li>
+
+              
+              
+             </ul>
+
+             <div
+              class="first-screen__contact-form second-screen__contact-form forth-screen__contact-form sixth-screen__contact-form-s"
+            >
+              <form class="contact-form">
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    id="app-name"
+                    class="first-screen__input"
+                    placeholder="Your name"
+                  />
+
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="app-phone"
+                    class="first-screen__input"
+                    placeholder="Your phone number"
+                  />
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+                <div class="first-screen-form__btn-wrapper">
+                  <button type="submit" class="first-screen__form-btn openModalBtn" data-modal-target="thanksPage">
+                    discuss a project
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </form>
+            </div>
+
+
+            </div>
+
+            <div
+              class="first-screen__contact-form second-screen__contact-form forth-screen__contact-form sixth-screen__contact-form"
+            >
+              <form class="contact-form">
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    id="app-name"
+                    class="first-screen__input"
+                    placeholder="Your name"
+                  />
+
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+
+                <div class="first-screen__input-wrapper">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="app-phone"
+                    class="first-screen__input"
+                    placeholder="Your phone number"
+                  />
+                  <div class="validation-text-denger">
+                    Please provide a valid input.
+                  </div>
+                </div>
+                <div class="first-screen-form__btn-wrapper">
+                  <button type="submit" class="first-screen__form-btn openModalBtn" data-modal-target="thanksPage">
+                    discuss a project
+                    <img src="./src/assets/img/icons/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div
+              class="first-screen__contact-form second-screen__contact-form sixth-screen__info-first sixth-screen__info"
+            >
+              <div>
+                <h2 class="forth-screen__info-title content">Online broadcast of repair</h2>
+                <p class="forth-screen__text">
+                  Purchase, installation and setup of video surveillance, both open and hidden, for indoor and outdoor use. Help with registering the system on the security panel.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="first-screen__contact-form second-screen__contact-form sixth-screen__info-second sixth-screen__info"
+            >
+              <div>
+                <h2 class="forth-screen__info-title content">Video-surveillance and alarm</h2>
+                <p class="forth-screen__text">
+                  Purchase, installation and setup of video surveillance, both open and hidden, for indoor and outdoor use. Help with registering the system on the security panel.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="first-screen__contact-form second-screen__contact-form sixth-screen__info-third sixth-screen__info"
+            >
+              <div>
+                <h2 class="forth-screen__info-title content">Selection of furniture</h2>
+                <p class="forth-screen__text">
+                 Purchase, installation and setup of video surveillance, both open and hidden, for indoor and outdoor use. Help with registering the system on the security panel.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="first-screen__contact-form second-screen__contact-form sixth-screen__info-forth sixth-screen__info"
+            >
+              <div>
+                <h2 class="forth-screen__info-title content">Household appliances</h2>
+                <p class="forth-screen__text">
+                  Purchase, installation and setup of video surveillance, both open and hidden, for indoor and outdoor use. Help with registering the system on the security panel.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="first-screen__contact-form second-screen__contact-form sixth-screen__info-fifth sixth-screen__info"
+            >
+              <div>
+                <h2 class="forth-screen__info-title content">Ultraservice</h2>
+                <p class="forth-screen__text">
+                  Purchase, installation and setup of video surveillance, both open and hidden, for indoor and outdoor use. Help with registering the system on the security panel.
+                </p>
+              </div>
+            </div>
+
+<!-- //////////////////// -->
+           <div
+            id="firstCard"
+              class="modal header-modal e-service__modal popUp-tab-sixth-screen__modal"
+            >
+              <div
+                class="header-modal__content e-service__content popUp-mob-gallery__content"
+              >
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="e-service__close"
+                  id="closeModalButtonSix"
+                />
+
+                <div class="popUp-mob-gallery__title-wrapper">
+                  <h2
+                    class="third-screen__title content e-service__title popUp-mob-gallery__title"
+                  >
+                    Online broadcast of repair
+                  </h2>
+                </div>
+                <p class="popUp-mob-gallery__text">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                  eu.
+                </p>
+              </div>
+            </div>
+
+           
+
+            <div
+            id="secondCard"
+              class="modal header-modal e-service__modal popUp-tab-sixth-screen__modal"
+            >
+              <div
+                class="header-modal__content e-service__content popUp-mob-gallery__content"
+              >
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="e-service__close"
+                  id="closeModalButtonSix"
+                />
+
+                <div class="popUp-mob-gallery__title-wrapper">
+                  <h2
+                    class="third-screen__title content e-service__title popUp-mob-gallery__title"
+                  >
+                    Video-sureillance and alarm
+                  </h2>
+                </div>
+                <p class="popUp-mob-gallery__text">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                  eu.
+                </p>
+              </div>
+            </div>
+
+            
+
+            <div
+            id="thirdCard"
+              class="modal header-modal e-service__modal popUp-tab-sixth-screen__modal"
+            >
+              <div
+                class="header-modal__content e-service__content popUp-mob-gallery__content"
+              >
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="e-service__close"
+                  id="closeModalButtonSix"
+                />
+
+                <div class="popUp-mob-gallery__title-wrapper">
+                  <h2
+                    class="third-screen__title content e-service__title popUp-mob-gallery__title"
+                  >
+                    Selection of furniture
+                  </h2>
+                </div>
+                <p class="popUp-mob-gallery__text">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                  eu.
+                </p>
+              </div>
+            </div>
+
+
+            <div
+            id="forthCard"
+              class="modal header-modal e-service__modal popUp-tab-sixth-screen__modal"
+            >
+              <div
+                class="header-modal__content e-service__content popUp-mob-gallery__content"
+              >
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="e-service__close"
+                  id="closeModalButtonSix"
+                />
+
+                <div class="popUp-mob-gallery__title-wrapper">
+                  <h2
+                    class="third-screen__title content e-service__title popUp-mob-gallery__title"
+                  >
+                    Household appliances
+                  </h2>
+                </div>
+                <p class="popUp-mob-gallery__text">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                  eu.
+                </p>
+              </div>
+            </div>
+
+            
+
+            <div
+            id="fifthCard"
+              class="modal header-modal e-service__modal popUp-tab-sixth-screen__modal"
+            >
+              <div
+                class="header-modal__content e-service__content popUp-mob-gallery__content"
+              >
+                <img
+                  src="./src/assets/img/icons/close.svg"
+                  alt="close"
+                  class="e-service__close"
+                  id="closeModalButtonSix"
+                />
+
+                <div class="popUp-mob-gallery__title-wrapper">
+                  <h2
+                    class="third-screen__title content e-service__title popUp-mob-gallery__title"
+                  >
+                   Ultra service
+                  </h2>
+                </div>
+                <p class="popUp-mob-gallery__text">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                  eu.
+                </p>
+              </div>
+            </div> 
+          </section>
+
+            <!-- ////////////////popUp-sixth-screen////////////////// -->
+
+            
+          
+        </div>
+      <!-- </div> -->
+
+<div class="pagination">
+    <a href="#screenShot1" class="point"></a>
+    <a href="#screenShot2" class="point"></a>
+    <a href="#screenShot3" class="point"></a>
+    <a href="#screenShot4" class="point"></a>
+    <a href="#screenShot5" class="point"></a>
+    <a href="#screenShot6" class="point"></a>
+</div>
+      
     </main>
+
+
+
+
+
+
+
+
+
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
     <script type="module" src="/main.js"></script>
 
     <script id="galleryTemplate" type="text/x-handlebars-template">
@@ -2625,5 +3640,7 @@
 
       </div>
     </script>
+
+    
   </body>
 </html>

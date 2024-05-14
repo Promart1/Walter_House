@@ -4,7 +4,8 @@
     width: 100%;
 
     &__inner {
-        top: 21%;
+      
+    top: 21%;
         margin-left: 0;
         padding-bottom: 0;
     }
@@ -85,9 +86,13 @@
 
     @include respond-to($xl-LapTop) {
         &__btn {
-            margin-top: 13vw;
+            margin-top: 11vw;
             margin-left: 15vw;
         }
+
+                &__inner {
+                    top: 20%;
+                }
     }
 
     @include respond-to($LapTop) {
@@ -96,6 +101,8 @@
                 width: 320px;
             }
         }
+
+        
     }
 
     @include respond-to($l-desktop) {
@@ -127,7 +134,7 @@
             font-size: 13px;
             max-width: 380px;
             letter-spacing: 5px;
-            margin-bottom: 20px;
+           
         }
 
         &__item:not(:last-child):after {
@@ -144,8 +151,9 @@
 
         &__inner {
             top: 0;
-            margin-top: 0;
-            padding-top: 21%;
+           margin-top: 0;
+            padding-top: 16%;
+            padding-bottom: 2%;
         }
 
         &__btn {
@@ -156,7 +164,8 @@
 
     @include respond-to($l-tablet) {
         &__inner {
-            padding-top: 15%;
+            padding-top: 11%;
+            padding-bottom: 5%;
         }
 
         &__subtitle {
@@ -177,7 +186,8 @@
         }
 
         &__content-wrapper {
-            margin-top: 15vw;
+            margin-top: 17vw;
+          
         }
     }
 
@@ -186,15 +196,19 @@
             display: block;
         }
 
+        &__inner {
+            padding-bottom: 0;
+        }
+
         &__item {
             margin-right: auto;
             margin-left: auto;
             margin-bottom: 35px;
         }
 
-        &__inner {
-            padding-top: 5%;
-        }
+        // &__inner {
+        //     padding-top: 5%;
+        // }
 
         &__subtitle {
             font-size: 10px;
@@ -211,7 +225,7 @@
         }
 
         &__content-wrapper {
-            margin-top: 17vw;
+            margin-top: 14vw;
         }
 
         &__item:not(:last-child):after {
@@ -232,7 +246,7 @@
             font-size: 10px;
 
             letter-spacing: 2px;
-            margin-bottom: 40px;
+            margin-bottom: 38px;
         }
     }
 }
