@@ -975,7 +975,7 @@
 
 .swiper-button-prev::after,
 .swiper-button-next:after {
-    content: "";
+    content: "" !important;
 }
 
 .point {
