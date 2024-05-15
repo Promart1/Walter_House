@@ -187,29 +187,66 @@ document.addEventListener('DOMContentLoaded', function() {
  
 
 
-function showPopup() {
-    let timerId; 
-    document.getElementById('popupWindow').style.display = 'block';
+// function showPopup() {
+//     let timerId;
+//     document.getElementById('popupWindow').style.display = 'block';
     
-    timerId = setTimeout(hidePopup, 20000); 
+//     timerId = setTimeout(hidePopup, 20000);
 
 
-    function hidePopup() {
-        document.getElementById('popupWindow').style.display = 'none';
+//     function hidePopup() {
+//         document.getElementById('popupWindow').style.display = 'none';
        
-        timerId = setTimeout(showPopup, 10000); 
+//         timerId = setTimeout(showPopup, 10000);
+//     }
+
+    
+//     function checkScreenWidth() {
+//         if (window.innerWidth >= 920) {
+            
+//             clearTimeout(timerId);
+//         }
+//     }
+
+//     // Додаємо обробник події для визову функції перевірки ширини екрана при зміні розміру вікна
+//     window.addEventListener('resize', checkScreenWidth);
+// }
+
+// // Додаємо обробник події для визову функції showPopup при завантаженні сторінки
+// window.addEventListener('load', showPopup);
+
+
+function showPopup() {
+    let timerId; // Змінна для зберігання ідентифікатора таймера
+    const popupWindow = document.getElementById('popupWindow');
+
+    // Функція для приховування віконечка
+    function hidePopup() {
+        popupWindow.style.display = 'none';
+        // Передаємо в setTimeout showPopup через 10 секунд
+        timerId = setTimeout(showPopup, 10000); // 10000 мілісекунд = 10 секунд
     }
 
-    
+    // Функція для перевірки ширини екрана і зупинки таймера при необхідності
     function checkScreenWidth() {
-        if (window.innerWidth >= 920) {
-            
+        if (window.innerWidth < 920) {
+            // Якщо ширина екрана менше 920px, ховаємо віконечко і зупиняємо таймер
+            popupWindow.style.display = 'none';
             clearTimeout(timerId);
         }
     }
 
+    // Встановлюємо відображення віконечка
+    popupWindow.style.display = 'block';
+
+    // Передаємо в setTimeout hidePopup через 20 секунд
+    timerId = setTimeout(hidePopup, 20000); // 20000 мілісекунд = 20 секунд
+
     // Додаємо обробник події для визову функції перевірки ширини екрана при зміні розміру вікна
     window.addEventListener('resize', checkScreenWidth);
+
+    // Викликаємо функцію перевірки ширини екрана одразу після показу віконечка
+    checkScreenWidth();
 }
 
 // Додаємо обробник події для визову функції showPopup при завантаженні сторінки
