@@ -7,6 +7,8 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import path from 'path';
 import imageminPlugin from 'vite-plugin-imagemin';
 import imageminWebp from 'imagemin-webp';
+import terser from '@rollup/plugin-terser';
+
    
 
 export default defineConfig({
@@ -54,7 +56,16 @@ imageminPlugin({
         main: path.resolve(__dirname, 'index.html'),
        
       }
-    }
+    },
+     plugins: [
+        terser({
+          compress: true,
+          mangle: true,
+          format: {
+            comments: false
+          }
+        })
+      ]
   },
   esbuild: {
     jsxFactory: 'create',
