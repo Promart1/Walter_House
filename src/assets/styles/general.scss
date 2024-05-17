@@ -10,6 +10,14 @@ html {
   /* Вимкнути зовнішню прокрутку сторінки */
 }
 
+.container {
+    max-width: 1920px;
+    height: 100%;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(
@@ -417,8 +425,8 @@ width: 7px;
   }
 }
 
-body.modal-open {
-  overflow: hidden;
+.modal-open {
+  overflow: hidden !important;
 }
 
 .header-modal {
@@ -1044,6 +1052,17 @@ display: none;
     position: relative;
     cursor: pointer;
     display: block;
+}
+
+.point.disabled {
+    pointer-events: none;
+    /* Вимикає можливість натискання */
+    color: grey;
+    /* Змінює колір тексту */
+    cursor: not-allowed;
+    /* Змінює курсор при наведенні */
+    text-decoration: none;
+    /* Прибирає підкреслення */
 }
 
 .pagination .point::after {

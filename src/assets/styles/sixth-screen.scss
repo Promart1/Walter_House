@@ -291,12 +291,12 @@
     &__list {
       position: relative;
       display: block;
-      margin-bottom: -30%;
+      margin-bottom: -310px;
     }
 
         &__contact-form-s {
             
-            bottom: 33%;
+            bottom: 0;
             padding-top: 50px;
             padding-bottom: 50px;
             position: relative;
@@ -334,9 +334,9 @@
       display: block;
       position: absolute;
      top: 10%;
-      z-index: 1;
+      z-index: 3;
       left: 50%;
-
+width: 100%;
       transform: translateX(-50%);
 
       button {
@@ -367,11 +367,16 @@
 
    @include respond-to($s-mobile) {
 &__contact-form-s {
-    bottom: 27%;
+   
         padding-top: 45px;
         padding-bottom: 55px;
        
     }
+
+         &__list {
+    
+             margin-bottom: -260px;
+         }
 
         &__show-more-btn {
             bottom: 24.5%;
@@ -390,20 +395,33 @@
 
    @include respond-to($mobile) {
     &__contact-form-s {
-            bottom: 25%;
+           
             padding-top: 40px;
             padding-bottom: 50px;
           
         }
+ &__list {
+
+     margin-bottom: -220px;
+ }
+                
    }
 }
 
 .popUp-tab-sixth-screen {
-  &__modal {
-    display: none;
-  }
+&__modal.active {
+        display: none;
+    }
 
-  &__modal.active {
-    display: block;
-  }
+        @include respond-to($l-desktop) {
+&__modal {
+        display: none;
+    }
+
+    &__modal.active {
+        display: block;
+    }
+        }
+
+ 
 }

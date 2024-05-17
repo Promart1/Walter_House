@@ -346,6 +346,7 @@
   .secondary__contact-form {
     opacity: 1;
       transition: opacity 0.5s ease-in-out;
+      
   }
 
   &__info-elite,
@@ -359,7 +360,10 @@
   &__info-elite,
   &__info-vip,
   &__info-extra {
+    // opacity: 0;
+    display: none;
     opacity: 0;
+      animation: fadeIn 2s ease forwards;
   }
 
   &__circle-wrapper-vip,
@@ -400,7 +404,7 @@
     .forth-screen__info-elite,
     .forth-screen__info-vip,
     .forth-screen__info-extra {
-      display: none;
+      display: none !important;
       z-index: 2;
     }
 

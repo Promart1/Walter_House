@@ -245,7 +245,7 @@
         }
 
         &__photo:hover {
-            height: 55vh;
+            height: 50vh;
             width: 100%;
 
             .third-screen__title::after {
@@ -338,7 +338,7 @@
         }
 
         &__photo:hover {
-            height: 36vh;
+            height: 40vh;
             width: 100%;
 
             .third-screen__full-image {
@@ -353,6 +353,29 @@
         }
     }
 
+         @include respond-to($mobile) {
+            &__photo {
+                    width: 100%;
+                    height: 20vh;
+                    transition: height 0.8s ease;
+                }
+            
+                &__photo:hover {
+                    height: 45vh;
+                    width: 100%;
+            
+                    .third-screen__full-image {
+                        height: 360px;
+                    }
+            
+                    .third-screen__title::after {
+                        width: 130px;
+                        height: 65px;
+                        border-radius: 0 0 130px 130px;
+                    }
+                }
+         }
+
 
 }
 
@@ -366,7 +389,7 @@
 
     &__content {
         margin: 5% auto;
-        height: 80vh;
+        height: 100vh;
         max-width: 1340px;
         padding-top: 15px;
         margin-left: 25%;
@@ -380,7 +403,13 @@
         position: absolute;
         right: 5px;
         top: 0;
+        cursor: pointer;
+        transition: transform 5ms ease;
     }
+
+        &__close:hover {
+transform: scale(1.1);
+        }
 
     &__title-wrapper {
         position: absolute;
@@ -489,16 +518,26 @@
 
 
     @include respond-to($m-mobile) {
-        &__item {
-            max-width: 395px;
-            gap: 20px;
-        }
+        // &__item {
+        //     max-width: 395px;
+        //     gap: 20px;
+        // }
+
+                 &__list {
+        
+                     grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
+        
+                 }
     }
 
     @include respond-to($s-mobile) {
-        &__item {
-            max-width: 295px;
-        }
+       
+
+                 &__list {
+                     
+                     grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+                     
+                 }
     }
 }
 
@@ -1010,6 +1049,10 @@
     &-first {
         left: 21.5%;
         top: 39.5%;
+
+        @include respond-to($xl-LapTop) {
+            left: 12.5%;
+        }
     }
 
     &-second {
@@ -1059,6 +1102,12 @@
         &-s-first {
             left: 21%;
             bottom: 29.5%;
+
+            @include respond-to($xl-LapTop) {
+left: 15%;
+    bottom: 37.5%;
+            }
+
         }
 
         &-s-second {
@@ -1079,6 +1128,11 @@
                 top: -140px;
                 left: 50px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            top: 42%;
+                            right: 36.5%;
+                        }
         }
 
         &-s-third {
@@ -1118,6 +1172,10 @@
                 top: -90px;
                 left: 55px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            bottom: 19%;
+                        }
         }
 
         &-t-fifth {
@@ -1131,6 +1189,7 @@
 
                          @include respond-to($xl-LapTop) {
                              right: 45%;
+                             top: 46.5%;
                          }
         }
 
@@ -1141,6 +1200,10 @@
             .gallery-modal__point-text {
                 top: -100px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            top: 47%;
+                        }
         }
 
         &-t-forth {
@@ -1151,6 +1214,10 @@
                 top: -80px;
                 left: 80px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            left: 24%;
+                        }
         }
 
         &-fo-first {
@@ -1171,6 +1238,10 @@
                 top: -130px;
                 left: 55px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            bottom: 19%;
+                        }
         }
 
         &-fo-fifth {
@@ -1246,7 +1317,7 @@
             }
 
             @include respond-to($xl-LapTop) {
-                left: 55%;
+                left: 45%;
             }
         }
 
@@ -1288,6 +1359,10 @@
                 top: -85px;
                 left: 80px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            right: 76.5%;
+                        }
         }
 
         &-s-third {
@@ -1353,6 +1428,10 @@
                 top: -90px;
                 left: 70px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            top: 45%;
+                        }
         }
 
         &-t-forth {
@@ -1373,6 +1452,10 @@
                 top: -90px;
                 left: 80px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            top: 50%;
+                        }
         }
 
         &-fo-second {
@@ -1406,7 +1489,7 @@
 
             @include respond-to($xl-LapTop) {
                 left: 50%;
-                top: 25%;
+                top: 45%;
             }
         }
 
@@ -1438,6 +1521,10 @@
                 top: -80px;
                 left: 80px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            top: 45%;
+                        }
         }
 
         &-fif-fifth {
@@ -1482,6 +1569,10 @@
                 top: -95px;
                 left: 80px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            top: 24%;
+                        }
         }
 
         &-six-second {
@@ -1502,6 +1593,10 @@
                 top: -120px;
                 left: 80px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            top: 45%;
+                        }
         }
 
         &-six-third {
@@ -1524,7 +1619,8 @@
             }
 
             @include respond-to($xl-LapTop) {
-                right: 40%;
+                right: 39%;
+                top: 29%;
             }
         }
 
@@ -1600,6 +1696,10 @@
                 top: -90px;
                 left: 50px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            top: 42%;
+                        }
         }
 
         &-s-first {
@@ -1644,6 +1744,10 @@
                 top: -120px;
                 left: 50px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            left: 70%;
+                        }
         }
 
         &-s-forth {
@@ -1698,6 +1802,10 @@
                 top: -90px;
                 left: 70px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            top: 30%;
+                        }
         }
 
         &-t-forth {
@@ -1786,6 +1894,10 @@
                 top: -100px;
                 left: 80px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            left: 18%;
+                        }
         }
 
         &-fif-fifth {
@@ -1840,6 +1952,9 @@
                 top: -110px;
                 left: 80px;
             }
+                        @include respond-to($xl-LapTop) {
+                            left: 26%;
+                        }
         }
 
         &-six-fifth {
@@ -1870,6 +1985,10 @@
                 top: -110px;
                 left: 80px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            right: 50%;
+                        }
         }
 
         &-six-sixth {
@@ -1920,6 +2039,10 @@
                 top: -110px;
                 left: 80px;
             }
+
+                        @include respond-to($xl-LapTop) {
+                            left: 46%;
+                        }
         }
 
         &-svn-forth {
@@ -1987,6 +2110,7 @@
 
             @include respond-to($xl-LapTop) {
                 top: 60%;
+                right: 25%;
             }
         }
 

@@ -1,6 +1,7 @@
 // import './style.scss'
 
 
+
 document.addEventListener("DOMContentLoaded", function(event) {
         var loadLater = document.querySelector('.loadLater');
         var head = document.querySelector('head');
@@ -10,53 +11,109 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
 
+// document.addEventListener("DOMContentLoaded", function() {
+//     const modals = document.querySelectorAll(".main-popUp");
+//     const modalButtons = document.querySelectorAll(".openModalBtn");
+//     const closeButtons = document.querySelectorAll(".close");
+//     const orderModal = document.getElementById("orderCall");
+//     const headerPhone = document.querySelector(".header__phone");
+
+
+//     modalButtons.forEach(button => {
+//         button.addEventListener("click", () => {
+//             const targetModalId = button.getAttribute("data-modal-target");
+//             const targetModal = document.getElementById(targetModalId);
+//             openModal(targetModal);
+//         });
+//     });
+
+
+//     closeButtons.forEach(closeButton => {
+//         closeButton.addEventListener("click", () => {
+//             const modal = closeButton.closest(".main-popUp");
+//             closeModal(modal);
+//         });
+//     });
+
+//     function openModal(modal) {
+//         if (modal) {
+//             modal.style.display = "block";
+//             document.body.classList.add("modal-open"); 
+//         }
+//     }
+
+
+     
+
+//     function closeModal(modal) {
+//         if (modal) {
+//             modal.style.display = "none";
+//             document.body.classList.remove("modal-open"); // Enable scrolling
+//         }
+//     }
+
+//     window.addEventListener("click", event => {
+//         if (event.target.classList.contains("main-popUp")) {
+//             closeModal(event.target);
+//         }
+//     });
+
+//     document.addEventListener("keydown", event => {
+//         if (event.key === "Escape") {
+//             const openModals = document.querySelectorAll(".main-popUp[style='display: block;']");
+//             openModals.forEach(openModal => {
+//                 closeModal(openModal);
+//             });
+//         }
+//     });
+// });
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const modals = document.querySelectorAll(".main-popUp");
     const modalButtons = document.querySelectorAll(".openModalBtn");
     const closeButtons = document.querySelectorAll(".close");
     const orderModal = document.getElementById("orderCall");
     const headerPhone = document.querySelector(".header__phone");
+   let links = document.querySelectorAll(".point");
+   
 
 
-    modalButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const targetModalId = button.getAttribute("data-modal-target");
-            const targetModal = document.getElementById(targetModalId);
-            openModal(targetModal);
-        });
-    });
 
-
-    closeButtons.forEach(closeButton => {
-        closeButton.addEventListener("click", () => {
-            const modal = closeButton.closest(".main-popUp");
-            closeModal(modal);
-        });
-    });
-
+    // Функція для відкриття модального вікна
     function openModal(modal) {
         if (modal) {
             modal.style.display = "block";
-            document.body.classList.add("modal-open"); 
+            document.body.classList.add("modal-open");
+            $.scrollify.disable();
+            links.forEach(link => {
+                link.classList.add("disabled");
+            });
         }
     }
 
-
-     
-
+    // Функція для закриття модального вікна
     function closeModal(modal) {
         if (modal) {
             modal.style.display = "none";
-            document.body.classList.remove("modal-open"); // Enable scrolling
+            document.body.classList.remove("modal-open");
+            $.scrollify.enable();
+              links.forEach(link => {
+                link.classList.remove("disabled");
+            });
         }
     }
 
+    // Додати обробник кліку на документ для закриття модального вікна при кліку поза ним
     window.addEventListener("click", event => {
         if (event.target.classList.contains("main-popUp")) {
             closeModal(event.target);
         }
     });
 
+    // Додати обробник клавіші Escape для закриття модального вікна
     document.addEventListener("keydown", event => {
         if (event.key === "Escape") {
             const openModals = document.querySelectorAll(".main-popUp[style='display: block;']");
@@ -65,12 +122,59 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     });
+
+    // Додати обробник кліку на іконку бургера
+    const burgerIcon = document.querySelector(".burger-icon");
+    const menuModal = document.getElementById("headerModal"); // Замініть "#menuModal" на ваш селектор для модального вікна з меню
+
+console.log(menuModal);
+
+    burgerIcon.addEventListener("click", () => {
+        if (menuModal.style.display !== "block") {
+            openModal(menuModal);
+        } else {
+            closeModal(menuModal);
+        }
+    });
+
+
+     const headerRequest = document.querySelector(".header__request");
+    const callModal = document.getElementById("orderCall"); // Замініть "#menuModal" на ваш селектор для модального вікна з меню
+
+    headerRequest.addEventListener("click", () => {
+        if (callModal.style.display !== "block") {
+            openModal(callModal);
+        } else {
+            closeModal(callModal);
+        }
+    });
+
+    const headerPhoneBtn = document.querySelector(".header__phone");
+   
+    headerPhoneBtn.addEventListener("click", () => {
+        if (callModal.style.display !== "block") {
+            openModal(callModal);
+        } else {
+            closeModal(callModal);
+        }
+    });
+
+    // Додаткові обробники подій для вже існуючих модальних вікон (якщо потрібно)
+    modalButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const targetModalId = button.getAttribute("data-modal-target");
+            const targetModal = document.getElementById(targetModalId);
+            openModal(targetModal);
+        });
+    });
+
+    closeButtons.forEach(closeButton => {
+        closeButton.addEventListener("click", () => {
+            const modal = closeButton.closest(".main-popUp");
+            closeModal(modal);
+        });
+    });
 });
-
-
-
-
-
 
 
 ///////validation form
@@ -515,39 +619,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
         styleItemElite.addEventListener('mouseover', function() {
             contactForm.style.opacity = 0;
-            contactInfoElite.style.opacity = 1;
+            contactInfoElite.style.display = "block";
            
         });
 
         styleItemElite.addEventListener('mouseout', function() {
             contactForm.style.opacity = 1;
-            contactInfoElite.style.opacity = 0;
+            contactInfoElite.style.display = "none";
             
         });
     
     
     styleItemVip.addEventListener('mouseover', function() {
             contactForm.style.opacity = 0;
-            contactInfoVip.style.opacity = 1;
+            contactInfoVip.style.display = "block";
            
         });
 
         styleItemVip.addEventListener('mouseout', function() {
             contactForm.style.opacity = 1;
-            contactInfoVip.style.opacity = 0;
+            contactInfoVip.style.display = "none";
             
         });
     
     
     styleItemExtra.addEventListener('mouseover', function() {
             contactForm.style.opacity = 0;
-            contactInfoExtra.style.opacity = 1;
+            contactInfoExtra.style.display = "block";;
            
         });
 
         styleItemExtra.addEventListener('mouseout', function() {
             contactForm.style.opacity = 1;
-            contactInfoExtra.style.opacity = 0;
+            contactInfoExtra.style.display = "none";;
             
         });
     
@@ -650,7 +754,7 @@ document.addEventListener('DOMContentLoaded', function() {
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const number = button.classList[1].replace('fifth-screen__main-point-', ''); // Отримуємо номер круга з класу кнопки
-            const targetCircle = document.querySelector(`[number="${number}"]`); // Знаходимо круг за номером кнопки
+            const targetCircle = document.querySelector(`[data-number-type="${number}"]`); // Знаходимо круг за номером кнопки
 
             if (targetCircle) {
                
@@ -689,10 +793,10 @@ document.addEventListener('DOMContentLoaded', function() {
         updateHash: false,           
         touchScroll: true,           
         before: function(index, sections) {
-           
+          
         },
         after: function(index, sections) {
-            
+             
         },
          pagination: {
         el: ".pagination",
